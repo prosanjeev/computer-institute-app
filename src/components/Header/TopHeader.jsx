@@ -36,14 +36,14 @@ function TopHeader() {
   ];
 
   return (
-    <Stack>
+    <Stack bgColor='#EFEBE6'>
       <Box as="flex" bgColor="#F5F6F7" w="100vw" >
         <Flex w="80%" justify="space-around" mx="auto" flexWrap='wrap' >
           <HStack py={2} flexWrap='wrap' justify={{base:'center', md:'none'}}> 
             {buttonLists.map((btn) => (
               <Link to={btn.link} key={btn.name}>
               <Button fontSize="14px" 
-              bgColor="yellow" 
+              bgColor="pink" 
               size='sm'
               _hover={{ bgColor: 'orange', color: 'white' }}
               color='black' px={2}  >
@@ -67,7 +67,7 @@ function TopHeader() {
         </Flex>
       </Box>
 
-       <Image src="/topimg.png" my='10px' />   
+       <Image src="/topimg.png" my='4px' />   
     </Stack>
   );
 }

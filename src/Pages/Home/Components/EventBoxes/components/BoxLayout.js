@@ -14,13 +14,13 @@ function BoxLayout(props) {
 
   return (
     <Container w="375px" border="1px solid rgba(255, 255, 255, 0.711)" p={0}>
-      <Box w="100%" bg="#034C7F" py="10px" color="white">
+      <Box w="100%" bg="#034C7F" py="10px" color="white" borderTopRadius={10}>
         <Text fontWeight="700" ml="10px" fontSize="18px">
           {props.title}
         </Text>
       </Box>
 
-      <Box bg='#F5DEB3' border='4px solid #F5DEB3' p="10px" overflow="hidden" position="relative" h='450px'>
+      <Box  border='1px solid #DADCE0' p="10px" overflow="hidden" position="relative" h='450px' borderBottomRadius='10'>
         <Box
           position="absolute"
           animation={`${scrollUp} 20s linear infinite`}

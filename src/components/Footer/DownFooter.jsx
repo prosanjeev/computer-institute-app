@@ -45,7 +45,7 @@ const DownFooter = () => {
   ];
 
   return (
-    <Box as="footer" bgColor="#B80505" w="100%">
+    <Box  bg='#F5F6F7' w="100%" borderTop='1px solid #DADCE0'>
       <Flex
         direction={{ base: "column", md: "row" }}
         className="footer-contantant"

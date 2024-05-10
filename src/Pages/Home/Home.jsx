@@ -16,6 +16,7 @@ import { fetchLatestStudents } from "../../AFS Panel/redux/actions/franchiseStud
 import { fetchUserNotifications, selectNotifications } from "../../AFS Panel/redux/notifications/userNotificationsSlice";
 import AuthorizedLocationsScroll from "./Components/AuthorizedLogoScroll/AuthorizedLogoScroll";
 import { Box } from "@chakra-ui/react";
+import CourseCard from "../../components/courseCard/CourseCard";
 
 const Home = () => {
   const latestBranches = useSelector(selectBranches);
@@ -35,7 +36,8 @@ const Home = () => {
   const notifications = useSelector(selectNotifications);
 
   return (
-    <>
+    <Box   fontFamily="Google Sans, sans-serif" // Set Google Sans as the font family
+    >
       <SimpleImageSlider />
       <AboutBox />
       <EventBox branchData={latestBranches} studentData={latestStudents} notifications={notifications}/>
@@ -50,7 +52,7 @@ const Home = () => {
       <Box borderTop='1px solid #d4cfcf' mt={10}>
       <AuthorizedLocationsScroll/>
       </Box>
-    </>
+    </Box>
   );
 };
 

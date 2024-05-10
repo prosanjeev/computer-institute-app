@@ -1,46 +1,54 @@
 import React from "react";
 import ImageBox from "./components/ImageBox";
 import { Flex } from "@chakra-ui/react";
+import CourseCard from "../../../../components/courseCard/CourseCard";
 
 function ImageBoxGrid() {
   let ImageBoxes = [
     {
       id: 1,
-      name: "BASIC COMPUTER COURSES",
-      url: "https://source.unsplash.com/300x300/?computer",
+      name: "Learn HTML",
+      details: "A solid overview of HTML for developers, from novice to expert level HTML.",
+      url: "https://web.dev/static/learn/html/card_480.png",
     },
     {
       id: 2,
-      name: "CERTIFICATE COURSE",
-      url: "https://source.unsplash.com/300x300/?class",
+      name: "Learn CSS",
+      details: "A solid overview of HTML for developers, from novice to expert level HTML.",
+      url: "https://web.dev/static/learn/css/card_480.png",
     },
     {
       id: 3,
-      name: "DIPLOMA COURSE",
-      url: "https://source.unsplash.com/300x300/?diploma",
+      name: "Learn JavaScript",
+      details: "A solid overview of HTML for developers, from novice to expert level HTML.",
+      url: "https://web.dev/static/learn/javascript/card_480.png",
     },
     {
       id: 4,
-      name: "LANGUAGE COURSE",
-      url: "https://source.unsplash.com/300x300/?programing ",
+      name: "Learn React",
+      details: "A solid overview of HTML for developers, from novice to expert level HTML.",
+      url: "https://web.dev/static/learn/performance/card_480.png",
     },
     {
       id: 5,
-      name: "TYPING COURSE",
-      url: "https://source.unsplash.com/300x300/?typing",
+      name: "Learn Design",
+      details: "A solid overview of HTML for developers, from novice to expert level HTML.",
+      url: "https://web.dev/static/learn/design/card_480.png",
     },
     {
       id: 6,
-      name: "PROFESSIONAL COURSES",
-      url: "https://source.unsplash.com/300x300/?professional",
+      name: "Learn Nodejs",
+      details: "A solid overview of HTML for developers, from novice to expert level HTML.",
+      url: "https://successerp.co.in/assets/img/training/web-nodejs-b.png",
     },
   ];
 
   return (
-    <Flex flexWrap="wrap" w="80%" mx="auto" gap={12} >
+    <Flex flexWrap="wrap" w="80%" mx="auto" gap={12} justify='center'>
       {ImageBoxes.map((imagebox) => {
         return (
-          <ImageBox name={imagebox.name} url={imagebox.url} key={imagebox.id} />
+          // <ImageBox name={imagebox.name} url={imagebox.url} key={imagebox.id} />
+          <CourseCard title={imagebox.name} url={imagebox.url} details={imagebox.details} key={imagebox.id}/>
         );
       })}
     </Flex>

@@ -7,7 +7,7 @@ import NewsAndEvents from "./components/NewsAndEvents";
 function EventBox({ branchData, studentData, notifications }) { 
 
   return (
-    <Box as="div" bgColor="brown" p="60px 0" w="100vw">
+    <Box as="div" borderY='2px solid #DADCE0' bg='#F5F6F7' p="60px 0" w="100vw">
       <Center >
       <HStack w={{base:"80%", md:'80%'}}  flexWrap="wrap"   >
         <BoxLayout title='Recently Join Centres'  component={ <RecentlyJoinCenter branchData={ branchData } />}/> 
