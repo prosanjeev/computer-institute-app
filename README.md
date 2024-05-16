@@ -1,5 +1,5 @@
 
-![computer app](https://github.com/prosanjeev/Computer-Institute-App/assets/154009697/7180406f-a4ed-4eb5-b164-d026736710b0)
+![demo](https://github.com/prosanjeev/computer-institute-app/assets/154009697/60052a35-523c-4171-9f41-1c3a3a7deaff)
 
 
 
