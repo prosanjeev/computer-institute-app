@@ -49,7 +49,7 @@ const Home = () => {
         text="Take advantage of the latest web & software technologies using our high quality services."
       />
       <IconBoxes /> */}
-      <Box borderTop='1px solid #d4cfcf' mt={10}>
+      <Box borderTop='1px solid #d4cfcf' mt={10} >
       <AuthorizedLocationsScroll/>
       </Box>
     </Box>

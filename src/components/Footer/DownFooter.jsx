@@ -32,7 +32,7 @@ const DownFooter = () => {
     },
     {
       text: "Student Login",
-      link: "/",
+      link: "/student-login",
     },
     {
       text: "Student Verification",
@@ -45,32 +45,28 @@ const DownFooter = () => {
   ];
 
   return (
-    <Box  bg='#F5F6F7' w="100%" borderTop='1px solid #DADCE0'>
+    <Box bg='#E1E3E9' w="100%" borderTop="1px solid #DADCE0">
       <Flex
         direction={{ base: "column", md: "row" }}
         className="footer-contantant"
         gap={4}
       >
-        <Box flex="1" mr={{ base: 0, md: 4 }} mb={{ base: 4, md: 0 }}>
-          <Heading as="h3" size="md" className="footer-title">
+        <Box flex="1" mr={{ base: 0, md: 4 }} mb={{ base: 4, md: 0 }} color="#939394">
+          <Heading as="h3" size="md" color="black" className="footer-title">
             CONTACT US
           </Heading>
           <Divider className="footer-hr-line" w={12} />
-          <Text className="footer-about" color="#CCC9AC">
+          <Text className="footer-about">
             {c_name}, {c_address}
           </Text>
           <VStack align="start" mt={2}>
             <Flex align="center">
               <IoCallOutline />
-              <Text color="#CCC9AC" ml={2}>
-                {c_phone}
-              </Text>
+              <Text ml={2}>{c_phone}</Text>
             </Flex>
             <Flex align="center">
               <MdMailOutline />
-              <Text color="#CCC9AC" ml={2}>
-                {c_email}
-              </Text>
+              <Text ml={2}>{c_email}</Text>
             </Flex>
           </VStack>
         </Box>
@@ -82,7 +78,7 @@ const DownFooter = () => {
           <VStack align="start" mt={2}>
             {useFulLink.map((list) => (
               <Link key={list.text} to={list.link}>
-                <HStack color="#CCC9AC">
+                <HStack color="#939394">
                   <Icon as={IoIosArrowForward} />
                   <Text> {list.text}</Text>
                 </HStack>

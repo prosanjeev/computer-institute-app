@@ -1,27 +1,29 @@
 export const menuItems = [
     { label: 'HOME', link: '/' },
     {
-      label: 'ABOUT US', link: '#', subMenu: [
-        { label: 'About M-TECH', link: '/about-company' },
-        { label: 'Chairman Message', link: '/chairman-message' },
-        { label: 'Our Vision & Mission', link: '/our-vision-and-mission' },
-        { label: 'Our Goal', link: '/our-goal' }
-      ]
+      label: 'ABOUT US', link: '/about-company', 
+      // subMenu: [
+      //   { label: 'About Company', link: '/about-company' },
+      //   { label: 'Chairman Message', link: '/chairman-message' },
+      //   { label: 'Our Vision & Mission', link: '/our-vision-and-mission' },
+      //   { label: 'Our Goal', link: '/our-goal' }
+      // ]
     },
     {
-      label: 'COURSES', link: '#', subMenu: [
-        { label: 'BASIC COURSES', link: '/basic-courses' },
-        { label: 'Diploma Course', link: '/diploma-courses' },
-        { label: 'Language Course', link: '/language-courses' },
-        { label: 'Professional Courses', link: '/professional-courses' }
-      ]
+      label: 'COURSES', link: '/courses', 
+      // subMenu: [
+      //   { label: 'BASIC COURSES', link: '/basic-courses' },
+      //   { label: 'Diploma Course', link: '/diploma-courses' },
+      //   { label: 'Language Course', link: '/language-courses' },
+      //   { label: 'Professional Courses', link: '/professional-courses' }
+      // ]
     },
     {
       label: 'STUDENT ZONE', link: '#', subMenu: [
-        { label: 'Student Registration', link: '/student-registration' },
+        // { label: 'Student Registration', link: '/student-registration' },
         { label: 'Student Verification', link: '/student-verification' },
         { label: 'Student Login', link: 'student-login' },
-        { label: 'Admit Card', link: '/admit-card' },
+        // { label: 'Admit Card', link: '/admit-card' },
         { label: 'Certificate Verification', link: '/certificate-verification' }
       ]
     },
@@ -32,12 +34,12 @@ export const menuItems = [
         { label: 'Center Verification', link: '/center-verification' }
       ]
     },
-    {
-      label: 'GALLARY', link: '#', subMenu: [
-        { label: 'Photos', link: '/Photos' },
-        { label: 'Videos', link: '/videos' }
-      ]
-    },
+    // {
+    //   label: 'GALLARY', link: '#', subMenu: [
+    //     { label: 'Photos', link: '/Photos' },
+    //     { label: 'Videos', link: '/videos' }
+    //   ]
+    // },
     {
       label: 'SERVICES', link: '#', subMenu: [
         { label: 'Services', link: '/services' },
@@ -48,7 +50,7 @@ export const menuItems = [
       label: 'LOGIN', link: '#', subMenu: [
         { label: 'Admin Login', link: '/admin-login' },
         { label: 'Franchise Login', link: '/franchise-login' },
-        { label: 'Employee Login', link: '/chairman-message' }
+        // { label: 'Employee Login', link: '/chairman-message' }
       ]
     },
     {

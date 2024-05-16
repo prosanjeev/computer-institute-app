@@ -31,7 +31,7 @@ const AuthorizedLocationsScroll = () => {
       mx="auto"
       align="center"
       position="relative"
-      my={10}
+      my={10} 
     >
       <HStack
         position="absolute"

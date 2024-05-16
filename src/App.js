@@ -44,15 +44,11 @@ import AddStudentPage from "./AFS Panel/FranchisePanel/pages/Student/AddStudentP
 import StudentListPage from "./AFS Panel/FranchisePanel/pages/Student/StudentListPage";
 import AdminPanel from "./AFS Panel/AdminPanel/pages/AdminPanel";
 import BranchWallet from "./AFS Panel/AdminPanel/pages/Wallet/BranchWallet";
-import AddCourseForm from "./AFS Panel/AdminPanel/pages/Course/AddCourse";
 import AddCourse from "./AFS Panel/AdminPanel/pages/Course/AddCourse";
 import AllCourses from "./AFS Panel/AdminPanel/pages/Course/AllCourses";
 import CourseSelectionPage from "./AFS Panel/FranchisePanel/pages/Course/CourseSelectionPage";
 import StudentIDCard from "./AFS Panel/StudentPanel/pages/IDCard/StudentIDCard";
-import UpdateBranchPage from "./AFS Panel/AdminPanel/pages/Branch/updateBranch/UpdateBranchPage";
-import StudentCertificate from "./AFS Panel/FranchisePanel/studentCertificates/certificate/StudentCertificate";
 import UpdateStudentPage from "./AFS Panel/FranchisePanel/pages/Student/UpdateStudentPage";
-import ChakraCertificate from "./AFS Panel/FranchisePanel/pages/FranchiseCertificate/ChakraCertificate";
 import PrintCenterCertificate from "./AFS Panel/FranchisePanel/pages/FranchiseCertificate/PrintCenterCertificate";
 import PrintMarksheet from "./AFS Panel/FranchisePanel/studentCertificates/markseet/PrintMarksheet";
 import UpdateCourse from "./AFS Panel/AdminPanel/pages/Course/UpdateCourse";
@@ -82,7 +78,7 @@ const App = () => {
                         <Route path='our-goal' element={<OurGoal />} />
 
                         {/* <Route path='basic-courses' element={<BasicCourses />} /> */}
-                        <Route path='diploma-courses' element={<DiplomaCourses />} />
+                        <Route path='courses' element={<DiplomaCourses />} />
                         {/* <Route path='language-courses' element={<LanguageCourses />} /> */}
                         <Route path='professional-courses' element={<ProfessionalCourses />} />
 

@@ -36,7 +36,7 @@ function TopHeader() {
   ];
 
   return (
-    <Stack bgColor='#EFEBE6'>
+    <Stack bgColor='#F4F5F6'>
       <Box as="flex" bgColor="#F5F6F7" w="100vw" >
         <Flex w="80%" justify="space-around" mx="auto" flexWrap='wrap' >
           <HStack py={2} flexWrap='wrap' justify={{base:'center', md:'none'}}> 
@@ -67,7 +67,7 @@ function TopHeader() {
         </Flex>
       </Box>
 
-       <Image src="/topimg.png" my='4px' />   
+       <Image src="/topimg.png" mb={{base:"3"}} />   
     </Stack>
   );
 }

@@ -30,32 +30,42 @@ export const lists = [
   export const teamList = [
     {
       url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyABtacOfSl8WS6TxLnDKIPRKqd7Pr2JUg5AGEg2LbYtX_KhmvxztFYeQjTTHdxKajkcs&usqp=CAU",
-      name: "Sanjay Kumar",
+      name: "S Kumar",
       position: "(Managing Director)",
     },
     {
       url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyABtacOfSl8WS6TxLnDKIPRKqd7Pr2JUg5AGEg2LbYtX_KhmvxztFYeQjTTHdxKajkcs&usqp=CAU",
-      name: "Shobha Devi",
+      name: "Shivam Kumar",
       position: "(Associate Director)",
     },
     {
       url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyABtacOfSl8WS6TxLnDKIPRKqd7Pr2JUg5AGEg2LbYtX_KhmvxztFYeQjTTHdxKajkcs&usqp=CAU",
-      name: "LalBabu Singh",
+      name: "L Singh",
       position: "(Trainer)",
     },
     {
       url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyABtacOfSl8WS6TxLnDKIPRKqd7Pr2JUg5AGEg2LbYtX_KhmvxztFYeQjTTHdxKajkcs&usqp=CAU",
-      name: "Shankar Kumar",
+      name: "S Kumar",
       position: "(Trainer)",
     },
     {
       url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyABtacOfSl8WS6TxLnDKIPRKqd7Pr2JUg5AGEg2LbYtX_KhmvxztFYeQjTTHdxKajkcs&usqp=CAU",
-      name: "Ashok Singh",
+      name: "A Kumar",
       position: "(Trainer)",
     },
     {
       url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyABtacOfSl8WS6TxLnDKIPRKqd7Pr2JUg5AGEg2LbYtX_KhmvxztFYeQjTTHdxKajkcs&usqp=CAU",
       name: "Sophia",
+      position: "(Sr. Trainer)",
+    },
+    {
+      url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyABtacOfSl8WS6TxLnDKIPRKqd7Pr2JUg5AGEg2LbYtX_KhmvxztFYeQjTTHdxKajkcs&usqp=CAU",
+      name: "Monika",
+      position: "(Trainer)",
+    },
+    {
+      url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyABtacOfSl8WS6TxLnDKIPRKqd7Pr2JUg5AGEg2LbYtX_KhmvxztFYeQjTTHdxKajkcs&usqp=CAU",
+      name: "Sapna",
       position: "(Trainer)",
     },
     // {
