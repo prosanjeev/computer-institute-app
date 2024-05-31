@@ -8,24 +8,24 @@ const DashboardLayout = ({ title, children }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   return (
-    <Flex>
+    <Flex bg="#f0f3f5" align="center" h="100vh">
       <Box
         display={{
           base: "none",
-          lg: "flex",
+          lg: "block",
         }}
       >
         <Sidenav />
       </Box>
       <SideDrawer isOpen={isOpen} onClose={onClose} />
-      <Box flexGrow={1}>
+      <Box flexGrow={1} overflow="hidden" h="100vh">
         <TopNav title={title} onOpen={onOpen} />
         <Container
           overflowX="hidden"
-          overflowY="auto"
-          h="calc(100vh - 88px)"
+          h="calc(100vh - 8rem)" // Adjust the height based on the TopNav height
           mt="6"
           maxW="90rem"
+          bg="#f0f3f5"
         >
           {children}
         </Container>

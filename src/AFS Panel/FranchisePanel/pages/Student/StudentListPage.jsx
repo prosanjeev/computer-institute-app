@@ -67,14 +67,14 @@ const StudentListPage = () => {
   const handleCourseAdmission = (studentId, franchiseId) => {
     navigate("/course-selection", { state: { studentId, franchiseId } });
   };
-  const handlePrintIdCard = (userName) => {
-    navigate("/idcard", { state: { userName } });
+  const handlePrintIdCard = (username) => {
+    navigate("/idcard", { state: { username } });
   };
-  const handlePrintCertificate = (userName) => {
-    navigate("/student-certificate", { state: { userName } });
+  const handlePrintCertificate = (username) => {
+    navigate("/student-certificate", { state: { username } });
   };
-  const handlePrintMarksheet = (userName) => {
-    navigate("/student-marksheet", { state: { userName } });
+  const handlePrintMarksheet = (username) => {
+    navigate("/student-marksheet", { state: { username } });
   };
 
   // const [isModalOpen, setIsModalOpen] = useState(false);
@@ -83,10 +83,10 @@ const StudentListPage = () => {
   // const openModal = () => setIsModalOpen(true);
   // const closeModal = () => setIsModalOpen(false);
 
-  const handlePhotoSubmit = async (userName, studentId, newPhotoFile) => {
+  const handlePhotoSubmit = async (username, studentId, newPhotoFile) => {
     try {
       // Upload new photo file to Firebase Storage
-      const photoRef = ref(storage, `students/${userName}/photo`);
+      const photoRef = ref(storage, `students/${username}/photo`);
       await uploadBytes(photoRef, newPhotoFile);
 
       // Get download URL of the new photo
@@ -103,7 +103,7 @@ const StudentListPage = () => {
     }
   };
 
-  const handlePhotoChange = async (userName, studentId, e) => {
+  const handlePhotoChange = async (username, studentId, e) => {
     const newPhotoFile = e.target.files[0];
 
     // Check if the file size is less than 60kb
@@ -149,7 +149,7 @@ const StudentListPage = () => {
         const resizedFile = new Blob([ab], { type: mimeString });
 
         // Upload the resized file to Firebase Storage
-        handlePhotoSubmit(userName, studentId, resizedFile);
+        handlePhotoSubmit(username, studentId, resizedFile);
       };
       img.src = dataUrl;
     };
@@ -224,7 +224,7 @@ const StudentListPage = () => {
                       fileInput.type = "file";
                       fileInput.accept = "image/*";
                       fileInput.addEventListener("change", (e) =>
-                        handlePhotoChange(student.userName, student.id, e)
+                        handlePhotoChange(student.username, student.id, e)
                       );
                       fileInput.click();
                     }}
@@ -276,7 +276,7 @@ const StudentListPage = () => {
                       <Box
                         p="1"
                         cursor="pointer"
-                        onClick={() => handlePrintIdCard(student.userName)}
+                        onClick={() => handlePrintIdCard(student.username)}
                       >
                         <Icon as={FaAddressCard} size="sm" colorScheme="blue" />
                       </Box>
@@ -285,7 +285,7 @@ const StudentListPage = () => {
                       <Box
                         p="1"
                         cursor="pointer"
-                        onClick={() => handlePrintCertificate(student.userName)}
+                        onClick={() => handlePrintCertificate(student.username)}
                       >
                         <Icon
                           as={PiCertificateFill}
@@ -298,7 +298,7 @@ const StudentListPage = () => {
                       <Box
                         p="1"
                         cursor="pointer"
-                        onClick={() => handlePrintMarksheet(student.userName)}
+                        onClick={() => handlePrintMarksheet(student.username)}
                       >
                         <Icon
                           as={TbCertificate2}

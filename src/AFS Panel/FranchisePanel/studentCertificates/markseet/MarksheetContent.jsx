@@ -28,8 +28,8 @@ const MarksheetContent = ({ studentData }) => {
   }, [studentData]);
 
   function setQRData() {
-    // var url = Object.values(studentData && studentData.userName);
-    const url = studentData ? studentData.userName : "";
+    // var url = Object.values(studentData && studentData.username);
+    const url = studentData ? studentData.username : "";
     const value = `${BASE_URL}/marksheet-verification/`
     setQdata(`${value}${url}`);
     // setQdata(`https://www.youtube.com`);  //https://computer-institute.netlify.app/

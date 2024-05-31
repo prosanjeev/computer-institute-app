@@ -17,7 +17,7 @@ const PrintIdCard = () => {
   const location = useLocation();
   const studentData = useSelector(selectStudentData);
   const [isLoading, setIsLoading] = useState(true);
-  const regNumber = location.state ? location.state.userName : null;
+  const regNumber = location.state ? location.state.username : null;
   console.log("hello", studentData);
   useEffect(() => {
     dispatch(fetchStudentData(regNumber))

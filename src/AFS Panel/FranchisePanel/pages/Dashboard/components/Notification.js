@@ -32,7 +32,7 @@ const Notification = () => {
             p={5}
             borderRadius="5px"
             boxShadow="2px 2px 4px  black"
-            w='50%'
+            w={{md:'48%', base:'100%'}}
         >
             <Text fontSize='20px'> Notification</Text>
             <Divider boxShadow="lg" />

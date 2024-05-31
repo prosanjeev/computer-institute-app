@@ -49,8 +49,8 @@ export const StPersonalInformation = [
 
  export  const studentCradesial = [
     {
-      label: "UserName",
-      name: "userName",
+      label: "username",
+      name: "username",
       type: "text",
       readOnly: true,
     },

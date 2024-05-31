@@ -37,11 +37,11 @@ export const dashboardData = [
     info: "1290",
     icon: iconMapping["Admission"],
   },
-  {
-    name: "User",
-    info: "43",
-    icon: iconMapping["User"],
-  },
+  // {
+  //   name: "User",
+  //   info: "43",
+  //   icon: iconMapping["User"],
+  // },
   {
     name: "Staff",
     info: "14",

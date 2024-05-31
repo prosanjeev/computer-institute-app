@@ -34,7 +34,7 @@ const StudentCertificate = () => {
   const studentData = useSelector(selectStudentData);
   const [isLoading, setIsLoading] = useState(true);
   const componentRef = useRef();
-  const regNumber = location.state ? location.state.userName : null;
+  const regNumber = location.state ? location.state.username : null;
 
   useEffect(() => {
     dispatch(fetchStudentData(regNumber))

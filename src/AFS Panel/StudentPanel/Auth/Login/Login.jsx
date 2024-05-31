@@ -30,12 +30,10 @@ import { login } from "../../../redux/student/slice/studentSlice";
   
   
   const StudentLogin = () => {
-
     const navigate = useNavigate();
     const dispatch = useDispatch();
-  
+
     const ref = collection(fireDB, 'students');
-  
     const handleLogin = async (initialValues, { setSubmitting }) => {
       try {
         const q = query(ref, where("username", "==", initialValues.username), where("password", "==", initialValues.password));
@@ -61,7 +59,6 @@ import { login } from "../../../redux/student/slice/studentSlice";
       setSubmitting(false);
     };
     
-
     return (
       <Container>  
         <Center minH="70vh">

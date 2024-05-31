@@ -22,9 +22,7 @@ import { toast } from "react-toastify";
 const CourseSelectionPage = () => {
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedDuration, setSelectedDuration] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
-  const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false);  const dispatch = useDispatch();
   const courses = useSelector(selectAllCourses);
   const navigate = useNavigate();
   const location = useLocation();

@@ -19,9 +19,9 @@ const StudentCertificateContent = ({ studentData }) => {
   }, [studentData]);
 
   function setQRData() {
-    // var url = Object.values(studentData && studentData.userName);
+    // var url = Object.values(studentData && studentData.username);
 
-    setQdata(studentData && studentData.userName);
+    setQdata(studentData && studentData.username);
   }
 
   const pseudoElementStyles = {

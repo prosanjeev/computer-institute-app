@@ -1,14 +1,14 @@
 import { RxDashboard } from "react-icons/rx";
 import { FaRegUser } from "react-icons/fa";
-import { IoIosGitBranch } from "react-icons/io";
+import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { CiWallet } from "react-icons/ci";
 import { PiStudent } from "react-icons/pi";
 import { SiCoursera } from "react-icons/si";
 import { TbReportSearch } from "react-icons/tb";
 import { FaUserTie } from "react-icons/fa";
-import { GrCloudComputer } from "react-icons/gr";
+import { GrCertificate } from "react-icons/gr";
 import { CgWebsite } from "react-icons/cg";
-import { MdOutlineNotificationsActive } from "react-icons/md";
+import { MdLaptopMac } from "react-icons/md";
 import { VscCommentUnresolved } from "react-icons/vsc";
 
 export const navLinks = [
@@ -73,13 +73,13 @@ export const navLinks = [
       link: "#",
     },
     {
-      icon: GrCloudComputer,
+      icon: MdLaptopMac,
       text: "Online Exam",
       link: "#",
     },
     {
-      icon: GrCloudComputer,
-      text: "Products",
+      icon: GrCertificate,
+      text: "Marksheet / Certificate",
       link: "#",
     },
     {
@@ -93,7 +93,7 @@ export const navLinks = [
       link: "#",
     },
     {
-      icon: CgWebsite,
+      icon: AiOutlineSafetyCertificate,
       text: "Authorisation Certificate",
       link: "/authorisation-certificate",
     },

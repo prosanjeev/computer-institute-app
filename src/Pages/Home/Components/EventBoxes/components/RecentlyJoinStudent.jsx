@@ -21,7 +21,7 @@ const RecentlyJoinStudent = ({ studentData }) => {
                 borderBottom="1px dotted black"
                 p={3}
               >
-                <Img boxSize="110px" src={student.photoUrl} alt="" borderRadius={10} />
+                <Img boxSize="110px" src={student.photoUrl} alt="" borderRadius={5} />
 
                 <Text>
                   Name:{" "}

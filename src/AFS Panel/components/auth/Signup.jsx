@@ -6,7 +6,7 @@ import { auth, fireDB, storage } from "../../firebase/FirebaseConfig";
 import { toast } from "react-toastify";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import Loader from "../loader/Loader";
-import MyContext from "../context/data/myContext";
+import MyContext from "../context/myContext";
 import {
   getDownloadURL,
   ref,

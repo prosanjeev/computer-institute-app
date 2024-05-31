@@ -116,7 +116,7 @@ const UpdateStudentPage = () => {
       // Upload logo file to Firebase Storage
       //   let photoUrl = studentData.photoUrl;
       //   if (photoFile) {
-      //     const photoRef = ref(storage, `students/${values.userName}/photo`);
+      //     const photoRef = ref(storage, `students/${values.username}/photo`);
       //     await uploadBytes(photoRef, photoFile);
       //     // Get download URL
       //     photoUrl = await getDownloadURL(photoRef);
@@ -138,7 +138,7 @@ const UpdateStudentPage = () => {
         postOffice: values.postOffice,
         pinCode: values.pinCode,
         village: values.village,
-        userName: values.userName,
+        username: values.username,
         password: values.password,
       });
       toast.success("Student Updated");
@@ -189,7 +189,7 @@ const UpdateStudentPage = () => {
                 pinCode: studentData?.pinCode || "",
                 postOffice: studentData?.postOffice || "",
                 village: studentData?.village || "",
-                userName: studentData?.userName || "",
+                username: studentData?.username || "",
                 password: studentData?.password || "",
               }}
               onSubmit={onSubmit}

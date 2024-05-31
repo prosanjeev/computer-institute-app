@@ -1,6 +1,6 @@
-import { Box, HStack, Heading, Icon, Stack, Text } from "@chakra-ui/react";
-import { Link, useLocation } from "react-router-dom";
-import { BiSupport } from "react-icons/bi";
+import { Box, Flex, HStack, Heading, Icon, Stack, Text } from "@chakra-ui/react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AiOutlineLogout } from "react-icons/ai";
 import { ChevronDownIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import { navLinks } from "./navList/navLinks";
@@ -8,6 +8,12 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Sidenav = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  // const user = JSON.parse(localStorage.getItem('user'))
+  const handleLogout = () => {
+    localStorage.clear("user");
+    navigate("/admin-login");
+  };
 
   const [activeMenu, setActiveMenu] = useState(null);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
@@ -27,28 +33,33 @@ const Sidenav = () => {
 
   return (
     <Stack
-      bg="#00073D"
-      justify="space-between"
+      bg="#E3E7E9"
+      // bg="#00073D"
+      justify="space-between" border='1px solid #d4cfcf' 
       boxShadow={{
         base: "none",
-        lg: "lg",
+        lg: "2xl",
       }}
       w={{
         base: "full",
-        lg: "16rem",
+        lg: "16rem", 
       }}
-      h="100vh"
+      h="100vh" 
     >
       <Box>
-        <Heading
-          textAlign="center"
-          fontSize="20px"
-          as="h1"
-          pt="3.5rem"
-          color="orange"
+       <Flex align='center' py={4} justify='center' borderTop='10px'   boxShadow={{
+        base: "none",
+        lg: "sm",
+      }}>
+       <Heading
+          // textAlign="center"
+          fontSize="30px" fontWeight='700'
+          // pt="3.5rem"
+          // color="orange"
         >
-          @M-Tech Computer
+          Admin
         </Heading>
+       </Flex>
         <Box mt="6" mx="3">
           {navLinks.map((nav, index) => (
             <Box key={nav.text}>
@@ -137,10 +148,10 @@ const Sidenav = () => {
         </Box>
       </Box>
 
-      <Box mt="6" mx="3" mb="6">
-        <Link to="/support">
+      <Box mt="2" mx="3" mb="6" onClick={handleLogout}>
+       
           <HStack
-            borderRadius="10px"
+            borderRadius="10px" justify='center' cursor='pointer' align='center'
             py="3"
             px="4"
             bg={isActiveLink("/support") ? "#F3F3F7" : "transparent"}
@@ -150,12 +161,12 @@ const Sidenav = () => {
               color: "#171717",
             }}
           >
-            <Icon as={BiSupport} />
-            <Text fontSize="14px" fontWeight="medium">
-              Support
+            <Text fontSize="20px" fontWeight="medium">
+              Logout
             </Text>
+            <Icon as={AiOutlineLogout} />
           </HStack>
-        </Link>
+      
       </Box>
     </Stack>
   );

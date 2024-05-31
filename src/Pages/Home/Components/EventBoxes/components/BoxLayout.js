@@ -13,14 +13,22 @@ function BoxLayout(props) {
   `;
 
   return (
-    <Container w="375px" border="1px solid rgba(255, 255, 255, 0.711)" p={0}>
+    <Container w="375px"
+      // border="1px solid rgba(255, 255, 255, 0.711)" 
+      bg='white'
+      borderRadius={10}
+      p={0} boxShadow="xl"
+      _hover={{ boxShadow: 'lg' }}
+      transition="all 0.2s"
+      >
+
       <Box w="100%" bg="#034C7F" py="10px" color="white" borderTopRadius={10}>
         <Text fontWeight="700" ml="10px" fontSize="18px">
           {props.title}
         </Text>
       </Box>
 
-      <Box  border='1px solid #DADCE0' p="10px" overflow="hidden" position="relative" h='450px' borderBottomRadius='10'>
+      <Box p="10px" overflow="hidden" position="relative" h='450px' borderBottomRadius='10'>
         <Box
           position="absolute"
           animation={`${scrollUp} 20s linear infinite`}

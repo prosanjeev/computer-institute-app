@@ -17,36 +17,32 @@ const iconMapping = {
 };
 
 export const franchisedashboardData = [
-  {
-    name: "Branch",
-    info: "213",
-    icon: iconMapping["Branch"],
-  },
+  
   {
     name: "Student",
-    info: "1789",
+    info: "89",
     icon: iconMapping["Student"],
   },
   {
     name: "Courses",
-    info: "90",
+    info: "9",
     icon: iconMapping["Courses"],
   },
-  {
-    name: "Admission",
-    info: "1290",
-    icon: iconMapping["Admission"],
-  },
-  {
-    name: "User",
-    info: "43",
-    icon: iconMapping["User"],
-  },
-  {
-    name: "Staff",
-    info: "14",
-    icon: iconMapping["Staff"],
-  },
+  // {
+  //   name: "Admission",
+  //   info: "54",
+  //   icon: iconMapping["Admission"],
+  // },
+  // {
+  //   name: "User",
+  //   info: "43",
+  //   icon: iconMapping["User"],
+  // },
+  // {
+  //   name: "Staff",
+  //   info: "14",
+  //   icon: iconMapping["Staff"],
+  // },
   {
     name: "Subject",
     info: "22",
@@ -54,27 +50,27 @@ export const franchisedashboardData = [
   },
   {
     name: "MARKSHEET",
-    info: "653",
+    info: "53",
     icon: iconMapping["MARKSHEET"],
   },
-  {
-    name: "VI CLASSES",
-    info: "7",
-    icon: iconMapping["VI CLASSES"],
-  },
-  {
-    name: "ST MATERIALS",
-    info: "16",
-    icon: iconMapping["ST MATERIALS"],
-  },
-  {
-    name: "News Notice",
-    info: "7",
-    icon: iconMapping["News Notice"],
-  },
-  {
-    name: "SYLLABUS",
-    info: "11",
-    icon: iconMapping["SYLLABUS"],
-  },
+  // {
+  //   name: "VI CLASSES",
+  //   info: "7",
+  //   icon: iconMapping["VI CLASSES"],
+  // },
+  // {
+  //   name: "ST MATERIALS",
+  //   info: "16",
+  //   icon: iconMapping["ST MATERIALS"],
+  // },
+  // {
+  //   name: "News Notice",
+  //   info: "7",
+  //   icon: iconMapping["News Notice"],
+  // },
+  // {
+  //   name: "SYLLABUS",
+  //   info: "11",
+  //   icon: iconMapping["SYLLABUS"],
+  // },
 ];

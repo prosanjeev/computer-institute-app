@@ -26,7 +26,7 @@ const FranchiseSidenav = ({ branchData }) => {
 
   return (
     <Stack
-      bg="#00073D"
+      bg="#E4E9EA" border='1px solid #d4cfcf' 
       justify="space-between"
       boxShadow={{
         base: "none",
@@ -39,7 +39,7 @@ const FranchiseSidenav = ({ branchData }) => {
       h={{md:"100vh", base:''}}
     >
       <Box>
-        <Box w="100%" borderBottom="1px solid gray" mt={4}>
+        <Box w="100%" borderBottom="1px solid #d4cfcf" mt={4}>
           {branchData ? (
             <ul>
               {branchData.logoUrl ? (

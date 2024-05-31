@@ -21,7 +21,7 @@ import { object, string, number } from "yup";
 import { updateDoc, getDoc, doc } from "firebase/firestore";
 import data from "../../../../components/state-wise-cities-data/data";
 import { fireDB } from "../../../firebase/FirebaseConfig";
-import { PersonalInformation, UserCradesial } from "./addBranch/data/data";
+import { PersonalInformation, UserCradesial } from "./components/data";
 import TitleBox from "../../../components/components/TitleBox";
 import { toast } from "react-toastify";
 import DashboardLayout from "../../components/DashboardLayout";

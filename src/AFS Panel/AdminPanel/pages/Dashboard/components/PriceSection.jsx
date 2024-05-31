@@ -12,14 +12,14 @@ import {
   Tabs,
   Text,
 } from "@chakra-ui/react";
-import { CustomCard } from "../../../chakra/CustomCard";
 import { BsArrowUpRight } from "react-icons/bs";
 import { AiFillPlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+import { CustomCard } from "../../../../components/chakra/CustomCard";
 
 const PriceSection = () => {
   const timestamps = ["7:15 PM", "7:55 PM", "8:55 PM", "9:55 PM", "10:55 PM"];
 
-  return (
+  return ( 
     <CustomCard>
       <Flex justify="space-between" align="start">
         <Stack>
@@ -32,7 +32,7 @@ const PriceSection = () => {
               base: "flex-start",
               sm: "center",
             }}
-            flexDir={{
+            flexDir={{ 
               base: "column",
               sm: "row",
             }}

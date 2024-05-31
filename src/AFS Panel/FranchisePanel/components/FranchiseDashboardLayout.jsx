@@ -16,7 +16,7 @@ const FranchiseDashboardLayout = ({ title, children }) => {
   }, [dispatch]);
 
   return (
-    <Flex>
+    <Flex bg='#F0F3F5'>
       <Box
         display={{
           base: "none",

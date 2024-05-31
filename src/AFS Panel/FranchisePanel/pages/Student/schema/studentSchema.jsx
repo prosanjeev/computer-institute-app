@@ -51,10 +51,10 @@ export const studentValidationSchema = object({
   postOffice: string().required("Post Office Place is Required"),
   village: string().required("Village Place is Required"),
 
-  userName: string()
-    .required("Username is Required")
-    .min(6, "Username must be at least 6 characters")
-    .max(24, "Username must be at most 24 characters"),
+  username: string()
+    .required("username is Required")
+    .min(6, "username must be at least 6 characters")
+    .max(24, "username must be at most 24 characters"),
   password: string()
     .required("Password is Required")
     .min(6, "Password must be at least 6 characters")

@@ -29,12 +29,12 @@ import WalletRechargeRequestForm from "./AFS Panel/FranchisePanel/pages/Wallate/
 import FranchiseProfilePage from "./AFS Panel/FranchisePanel/pages/Profile/FranchiseProfilePage";
 import CourseCategoryPage from "./AFS Panel/AdminPanel/pages/Course/CourseCategory";
 import Signup from "./AFS Panel/components/auth/Signup";
-import MyState from "./AFS Panel/components/context/data/myState";
+import MyState from "./AFS Panel/components/context/myState";
 import AdminPrivateRoute from "./AFS Panel/components/privateRoute/AdminPrivateRoute";
 import FranchisePrivateRoute from "./AFS Panel/components/privateRoute/FranchisePrivateRoute";
 import FranchiseLogin from "./AFS Panel/FranchisePanel/Auth/Login/FranchiseLogin";
 import AdminLogin from "./AFS Panel/AdminPanel/Auth/Login/AdminLogin";
-import AddBranch from "./AFS Panel/AdminPanel/pages/Branch/addBranch/AddBranch";
+import AddBranch from "./AFS Panel/AdminPanel/pages/Branch/AddBranch";
 import ForgotPassword from "./AFS Panel/components/adminAndCenterAuth/ForgotPassword/ForgotPassword";
 import UpdateBranch from "./AFS Panel/AdminPanel/pages/Branch/UpdateBranch";
 import BranchPage from "./AFS Panel/AdminPanel/pages/Branch/Branch";
@@ -42,7 +42,6 @@ import ContactUsQuery from "./AFS Panel/AdminPanel/pages/Query/ContactUsQuery";
 // import FranchiseCertificate from "./AFS Panel/FranchisePanel/pages/FranchiseCertificate/old/FranchiseCertificate";
 import AddStudentPage from "./AFS Panel/FranchisePanel/pages/Student/AddStudentPage";
 import StudentListPage from "./AFS Panel/FranchisePanel/pages/Student/StudentListPage";
-import AdminPanel from "./AFS Panel/AdminPanel/pages/AdminPanel";
 import BranchWallet from "./AFS Panel/AdminPanel/pages/Wallet/BranchWallet";
 import AddCourse from "./AFS Panel/AdminPanel/pages/Course/AddCourse";
 import AllCourses from "./AFS Panel/AdminPanel/pages/Course/AllCourses";
@@ -61,7 +60,6 @@ import SerivicesGrid from "./Pages/services/SerivicesGrid";
 import DiplomaCourses from "./Pages/Courses/DiplomaCourses";
 // import LanguageCourses from "./Pages/courses/LanguageCourses";
 import ProfessionalCourses from "./Pages/Courses/ProfessionalCourses";
-import BinaryMLMTree from "./Pages/demo/demo";
 // import StudentListPage from "./AFS Panel/FranchisePanel/pages/Student/AllStudents";
 
 const App = () => {
@@ -109,9 +107,13 @@ const App = () => {
                         <Route path='student' element={<AllStudent />} />
                         <Route path="add-branch" element={<AddBranch />} />
                         <Route path='branch' element={<AllBranch />} />
+                        <Route path="update-branch" element={<UpdateBranch />} />
                         <Route path='course-category' element={<CourseCategoryPage />} />
                         <Route path='contact-us-query' element={<ContactUsQuery />} />
                         <Route path='branch-wallet' element={<BranchWallet />} />
+                        <Route path="add-course" element={<AddCourse />} />
+                        <Route path="all-courses" element={<AllCourses />} />
+                        <Route path="update-course" element={<UpdateCourse />} />
                     </Route>
 
                     <Route path='franchise-login' element={<FranchiseLogin />} />
@@ -130,27 +132,20 @@ const App = () => {
                     </Route>
 
                     <Route path='student-dashboard' element={<StudentDashboard />} />
-                    {/* <Route path='student-dashboard' element={<StudentDashboard />} /> */}
                     <Route path='practice-test' element={<PracticeTest />} />
 
                     {/* <Route path="/signup*" element={<Signup />} /> */}
                     {/* <Route path="/login" element={<Login />} /> */}
                     <Route path="*" element={<> not found</>} />
-                    <Route path="update-branch" element={<UpdateBranch />} />
                     <Route path="branchpage" element={<BranchPage />} />
 
                     {/* <Route path="succ" element={<PasswordResetDone/>} /> */}
                     <Route path="forgot-password" element={<ForgotPassword />} />
-                    <Route path="all-students" element={<AdminPanel />} />
-                    <Route path="add-course" element={<AddCourse />} />
-                    <Route path="all-courses" element={<AllCourses />} />
-                    <Route path="update-course" element={<UpdateCourse />} />
 
                     <Route path="id-card" element={<StudentIDCard />} />
                     <Route path="idcard" element={<PrintIdCard />} />
-                    <Route path="student-certificate-verification/:regNumber" element={<QrVerification />} />
+                    <Route path="qr-verification/:regNumber" element={<QrVerification />} />
                     <Route path="user-notice" element={<NotificationForUser />} />
-                    <Route path="demo" element={<BinaryMLMTree/>} />
                     {/* <Route path="chakra-certificate" element={<ChakraCertificate/>} /> */}
 
                 </Routes>
