@@ -26,7 +26,7 @@ const StudentSidenav = () => {
     >
       <Box>
         <Heading textAlign="center" fontSize="20px" as="h1" pt="3.5rem">
-          @M-Tech Computer
+          Student Panel
         </Heading>
         <Box mt="6" mx="3">
           {stSideNavLinks.map((nav) => (

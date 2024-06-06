@@ -28,8 +28,6 @@ import { fetchStudents } from "../../../redux/actions/franchiseStudentsActions";
 import { selectStudentCoursesSize } from "../../../redux/selectors/enrollmentSelectors";
 import DashboardChart from "./components/DashboardChart";
 import DashboardCard from "../../../components/dashboardCard/DashboardCard";
-import PortfolioSection from "./components/PortfolioSection";
-import PriceSection from "./components/PriceSection";
 import DashboardBigCard from "../../../components/dashboardCard/DashboardBigCard";
 
 const iconMapping = {

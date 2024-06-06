@@ -1,17 +1,18 @@
-import React from 'react';
-import { Box, Flex, Text, useColorModeValue } from '@chakra-ui/react';
+import React from "react";
+import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 
 const DashboardBigCard = ({ title, value, icon, gradient }) => {
-  const textColor = useColorModeValue('gray.800', 'white');
+  const textColor = useColorModeValue("gray.800", "white");
 
   return (
     <Box
       bgGradient={gradient}
-      p={5}  mt={10}
+      p={5}
+      mt={10}
       // border="1px solid #d4cfcf"
-      borderRadius="lg" 
+      borderRadius="lg"
       boxShadow="xl"
-      _hover={{ boxShadow: 'md' }}
+      _hover={{ boxShadow: "md" }}
       transition="all 0.2s"
     >
       <Flex align="center" justify="space-between">
@@ -29,4 +30,4 @@ const DashboardBigCard = ({ title, value, icon, gradient }) => {
   );
 };
 
-  export default DashboardBigCard
+export default DashboardBigCard;

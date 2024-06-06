@@ -1,4 +1,3 @@
-import { BellIcon } from "@chakra-ui/icons";
 import {
   Badge,
   Box,
@@ -14,13 +13,8 @@ import {
   MenuList,
 } from "@chakra-ui/react";
 import { FaBars, FaUserTie } from "react-icons/fa";
-import {
-  BsChatLeftDots,
-  BsChatLeftText,
-  BsFillChatLeftFill,
-} from "react-icons/bs";
+import { BsChatLeftText } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import { LuWallet } from "react-icons/lu";
 import { HiDocumentReport } from "react-icons/hi";
 import { CiWallet } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
@@ -37,7 +31,8 @@ const TopNav = ({ title, onOpen }) => {
 
   return (
     <Box
-      px="4" h="88px"
+      px="4"
+      h="88px"
       // bg="#2A3542"
     >
       <HStack maxW="80rem" h="100%" justify="space-between" mx="auto">
@@ -134,8 +129,9 @@ const TopNav = ({ title, onOpen }) => {
             Settingsn
             rightIcon={<HiDocumentReport />}
             colorScheme="purple"
-            fontWeight="400"   boxShadow="xl"
-            _hover={{ boxShadow: 'md' }}
+            fontWeight="400"
+            boxShadow="xl"
+            _hover={{ boxShadow: "md" }}
             transition="all 0.2s"
           >
             Generate Report

@@ -16,7 +16,6 @@ import {
 } from "@chakra-ui/react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Field, Form, Formik } from "formik";
-import { object, string, number } from "yup";
 // import DashboardLayout from "../../../components/DashboardLayout";
 import { updateDoc, getDoc, doc } from "firebase/firestore";
 import data from "../../../../components/state-wise-cities-data/data";

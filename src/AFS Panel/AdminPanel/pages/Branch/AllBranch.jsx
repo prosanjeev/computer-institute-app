@@ -1,9 +1,7 @@
 import DashboardLayout from "../../components/DashboardLayout";
 import {
-  Box,
   Button,
   Flex,
-  Grid,
   Icon,
   Image,
   Switch,
@@ -14,10 +12,17 @@ import {
   Tr,
   Th,
   Td,
+  InputGroup,
+  InputLeftElement,
+  Input,
+  Box,
+  Text,
+  Stack,
 } from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
 import { FaRegEdit } from "react-icons/fa";
 import { RiImageEditLine } from "react-icons/ri";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom"; // Import useHistory
 import {
@@ -28,8 +33,10 @@ import { toast } from "react-toastify";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { fireDB, storage } from "../../../firebase/FirebaseConfig";
 import { doc, updateDoc } from "firebase/firestore";
+import SearchBar from "../../../components/searchBar/SearchBar";
 
 const AllBranch = () => {
+  const [search, setSearch] = useState("");
   const branches = useSelector(selectBranches);
   const dispatch = useDispatch();
   const navigate = useNavigate(); // Initialize useHistory hook
@@ -37,6 +44,11 @@ const AllBranch = () => {
   useEffect(() => {
     dispatch(fetchBranches());
   }, [dispatch]);
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
 
   const handleStatusChange = (branchId, newStatus) => {
     // Implement your logic to update the status of the branch with ID branchId to newStatus
@@ -121,9 +133,37 @@ const AllBranch = () => {
     reader.readAsDataURL(newPhotoFile);
   };
 
+  const filteredData = search
+    ? branches.filter((branch) =>
+        branch.centerName.toLowerCase().includes(search.toLowerCase())
+      )
+    : branches;
+
   return (
     <DashboardLayout title="Center List">
-      <Flex direction="column" alignItems="center" mx={2}>
+      <Stack  mx={2}>
+
+        <Flex >
+          <InputGroup w='md'  mb="4" >
+            <InputLeftElement pointerEvents="none">
+              <SearchIcon color="gray.300" />
+            </InputLeftElement>
+            <Input
+              onChange={handleChange}
+              type="text"
+              placeholder="Search ..."
+              focusBorderColor="blue.500"
+              bg="white"
+              _placeholder={{ color: "gray.400" }}
+              border='1px solid #d4cfcf'
+              borderRadius="md"
+              boxShadow="sm"
+              _hover={{ boxShadow: "md" }}
+            />
+          </InputGroup>
+         
+        </Flex>
+
         <Table
           variant="simple"
           colorScheme="blue"
@@ -164,7 +204,7 @@ const AllBranch = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {branches.map((branch, index) => (
+            {filteredData.map((branch, index) => (
               <Tr key={branch.id}>
                 <Td>{index + 1}</Td>
                 <Td>
@@ -231,7 +271,7 @@ const AllBranch = () => {
             ))}
           </Tbody>
         </Table>
-      </Flex>
+      </Stack>
     </DashboardLayout>
   );
 };

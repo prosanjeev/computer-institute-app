@@ -20,7 +20,7 @@ const dispatch = useDispatch();
   }
 
   return (
-   <StudentDashboardLayout>
+   <StudentDashboardLayout title='Id Card'>
      <Box
     //   w="300px"
     //   h="200px"

@@ -7,10 +7,10 @@ const StudentDashboardLayout = ({ title, children }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   return (
-    <Flex>
+    <Flex bg="#F0F3F5">
       <Box
         display={{
-          base: "none",
+          base: "none", 
           lg: "flex",
         }}
       >
@@ -25,8 +25,9 @@ const StudentDashboardLayout = ({ title, children }) => {
           overflowX="hidden"
           overflowY="auto"
           h="calc(100vh - 88px)"
-          mt="6"
-          maxW="70rem"
+          mt="10"
+          maxW={{ md: "90rem", base: "100vw" }}
+          mx="auto"
         >
           {children}
         </Container>

@@ -16,13 +16,13 @@ export const stSideNavLinks = [
     {
       icon: FaRegUser,
       text: "Profile",
-      link: "/transactions",
+      link: "#",
     },
     
     {
       icon: CiWallet,
       text: "E Books",
-      link: "/transactions",
+      link: "#",
     },
     {
       icon: PiStudent,
@@ -32,17 +32,17 @@ export const stSideNavLinks = [
     {
       icon: SiCoursera,
       text: "Main Test",
-      link: "/transactions",
+      link: "#",
     },
     {
       icon: TbReportSearch,
       text: "Report",
-      link: "/transactions",
+      link: "#",
     },
     {
       icon: GrCloudComputer,
       text: "Online Exam",
-      link: "/transactions",
+      link: "#",
     },
     {
       icon: GrCloudComputer,
@@ -52,7 +52,7 @@ export const stSideNavLinks = [
     {
       icon: CgWebsite,
       text: "Notice",
-      link: "/transactions",
+      link: "#",
     },
    
   ];
