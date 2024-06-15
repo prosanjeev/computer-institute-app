@@ -26,6 +26,9 @@ import { toast } from "react-toastify";
 import { franchiseValidationSchema } from "./components/schema";
 import { useNavigate } from "react-router-dom";
 import { uploadFile } from "../../../../utils/fileUpload";
+import { decryptData, encryptData } from "../../../redux/admin/crypto/helper";
+import { addNewBranch } from "../../../redux/admin/branchSlice";
+import { useDispatch } from "react-redux";
 
 const AddBranch = () => {
   const [selectedState, setSelectedState] = useState("");
@@ -35,6 +38,7 @@ const AddBranch = () => {
   const [signFile, setSignFile] = useState(null); // State to hold signature file
   // const [centerId, setCenterId] = useState(""); // State to hold the centerId
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setCities(data.cities[selectedState] || []);
@@ -113,7 +117,6 @@ const AddBranch = () => {
 
   const onSubmit = async (values) => {
     try {
-      // Check if the username is available
       const usernameQuery = query(
         collection(fireDB, "franchiseData"),
         where("userName", "==", values.userName)
@@ -135,36 +138,48 @@ const AddBranch = () => {
       const nextCenterId = `MTECH${baseValue + totalFranchises}`;
       // Use `nextCenterId` for your further logic
 
-      const logoUrl = values.logo ? await uploadFile(storage, logoFile, `franchise/${values.userName}/logo`) : "";
-      const signUrl = values.signature ? await uploadFile(storage, signFile, `franchise/${values.userName}/signature`) : "";
+      const logoUrl = values.logo
+        ? await uploadFile(
+            storage,
+            logoFile,
+            `franchise/${values.userName}/logo`
+          )
+        : "";
+      const signUrl = values.signature
+        ? await uploadFile(
+            storage,
+            signFile,
+            `franchise/${values.userName}/signature`
+          )
+        : "";
 
+      const branchData = {
+        centerId: nextCenterId, // Use the new centerId
+        createdAt: new Date().toISOString(),
+        directorName: values.directorName,
+        gender: values.gender,
+        primaryPhone: values.primaryPhone,
+        email: values.email,
+        documentType: values.documentType,
+        documentNumber: values.documentNumber,
+        centerName: values.centerName,
+        officePhone: values.officePhone,
+        state: values.state,
+        district: values.district || "",
+        policeStation: values.policeStation,
+        pinCode: values.pinCode,
+        centerPlace: values.centerPlace,
+        wathsappPhone: values.wathsappPhone,
+        userName: values.userName,
+        password: values.password,
+        logoUrl: logoUrl, // Add logo URL to Firestore
+        signUrl: signUrl, // Add signature URL to Firestore
+      };
 
-      const franchiseDocRef = await addDoc(
-        collection(fireDB, "franchiseData"),
-        {
-          centerId: nextCenterId, // Use the new centerId
-          createdAt: new Date().toISOString(),
-          directorName: values.directorName,
-          gender: values.gender,
-          primaryPhone: values.primaryPhone,
-          email: values.email,
-          documentType: values.documentType,
-          documentNumber: values.documentNumber,
-          centerName: values.centerName,
-          officePhone: values.officePhone,
-          state: values.state,
-          district: values.district || "",
-          policeStation: values.policeStation,
-          pinCode: values.pinCode,
-          centerPlace: values.centerPlace,
-          wathsappPhone: values.wathsappPhone,
-          userName: values.userName,
-          password: values.password,
-          logoUrl: logoUrl, // Add logo URL to Firestore
-          signUrl: signUrl, // Add signature URL to Firestore
-        }
-      );
-      toast.success("New Center Added ", franchiseDocRef.id);
+      // Dispatch the action to add a new branch
+      await dispatch(addNewBranch(branchData));
+
+      toast.success("New Center Added");
       navigate("/branch");
     } catch (e) {
       console.error("Error adding document: ", e);

@@ -10,18 +10,18 @@ const initialState = {
   studentData: null,
 };
 
-export const fetchStudentData = (userName) => async (dispatch, getState) => {
+export const fetchStudentData = (username) => async (dispatch, getState) => {
   const state = getState();
   try {
     let studentId = state.student.userId;
 
-    if (!studentId && userName) {
+    if (!studentId && username) {
       // Fetch student ID using username
       const studentsRef = collection(fireDB, "students");
-      const usernameQuery = query(studentsRef, where("userName", "==", userName));
+      const usernameQuery = query(studentsRef, where("username", "==", username));
       const usernameSnapshot = await getDocs(usernameQuery);
       if (usernameSnapshot.empty) {
-        toast.error("No student  with this userName:", userName);
+        toast.error("No student  with this username:", username);
         return;
       }
       studentId = usernameSnapshot.docs[0].id;

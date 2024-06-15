@@ -52,6 +52,7 @@ const MyState = ({ children }) => {
         setFilterPrice,
         // logout,
       }}
+      
     >
       {children}
     </MyContext.Provider>

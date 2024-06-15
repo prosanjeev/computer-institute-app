@@ -113,7 +113,7 @@ const AddStudentPage = () => {
       // Check if the username is available
       const usernameQuery = query(
         collection(fireDB, "students"),
-        where("userName", "==", values.userName)
+        where("username", "==", values.username)
       );
       const usernameQuerySnapshot = await getDocs(usernameQuery);
       if (!usernameQuerySnapshot.empty) {
@@ -135,7 +135,7 @@ const AddStudentPage = () => {
       // Upload logo file to Firebase Storage
       let photoUrl = "";
       if (photoFile) {
-        const photoRef = ref(storage, `students/${values.userName}/photo`);
+        const photoRef = ref(storage, `students/${values.username}/photo`);
         await uploadBytes(photoRef, photoFile);
         // Get download URL
         photoUrl = await getDownloadURL(photoRef);
@@ -146,7 +146,7 @@ const AddStudentPage = () => {
       if (signFile) {
         const signatureRef = ref(
           storage,
-          `students/${values.userName}/signature`
+          `students/${values.username}/signature`
         );
         await uploadBytes(signatureRef, signFile);
         signUrl = await getDownloadURL(signatureRef);
@@ -169,7 +169,7 @@ const AddStudentPage = () => {
         postOffice: values.postOffice,
         pinCode: values.pinCode,
         village: values.village,
-        userName: values.userName,
+        username: values.username,
         password: values.password,
         photoUrl: photoUrl, // Add Photo URL to Firestore
         signUrl: signUrl, // Add signature URL to Firestore
@@ -233,7 +233,7 @@ const AddStudentPage = () => {
                 village: "",
                 studentPhoto: null,
                 studentSignature: null,
-                userName: "",
+                username: "",
                 password: "",
               }}
               onSubmit={onSubmit}

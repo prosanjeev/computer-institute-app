@@ -45,6 +45,8 @@ const AllBranch = () => {
     dispatch(fetchBranches());
   }, [dispatch]);
 
+  console.log("branchess",branches)
+
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
@@ -178,7 +180,7 @@ const AllBranch = () => {
                 Date
               </Th>
               <Th fontSize="lg" fontWeight="bold">
-                Photo
+                Logo
               </Th>
               <Th fontSize="lg" fontWeight="bold">
                 Branch Code
@@ -204,15 +206,15 @@ const AllBranch = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {filteredData.map((branch, index) => (
-              <Tr key={branch.id}>
+            {filteredData && filteredData.map((branch, index) => (
+              <Tr key={index}>
                 <Td>{index + 1}</Td>
                 <Td>
                   {new Date(branch.createdAt).toLocaleDateString("en-GB")}
                 </Td>
                 <Td>
                   <Image
-                    src={branch.logoUrl}
+                    src={branch.logoUrl? branch.logoUrl : "https://static-00.iconduck.com/assets.00/info-icon-2048x2048-tcgtx810.png" }
                     alt={branch.name}
                     w="40px"
                     h="40px"

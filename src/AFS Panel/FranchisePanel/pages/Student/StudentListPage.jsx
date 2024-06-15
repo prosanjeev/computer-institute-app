@@ -216,8 +216,8 @@ const StudentListPage = () => {
                     alt={student.studentName}
                     w={isMobile ? "30px" : "40px"}
                     h={isMobile ? "30px" : "40px"}
-                    border="2px solid"
-                    borderRadius="10px"
+                    border="1px solid gray"
+                    borderRadius="100%"
                     cursor="pointer"
                     onClick={(e) => {
                       const fileInput = document.createElement("input");

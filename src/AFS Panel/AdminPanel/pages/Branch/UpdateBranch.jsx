@@ -16,8 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Field, Form, Formik } from "formik";
-// import DashboardLayout from "../../../components/DashboardLayout";
-import { updateDoc, getDoc, doc } from "firebase/firestore";
+import { getDoc, doc, updateDoc } from "firebase/firestore";
 import data from "../../../../components/state-wise-cities-data/data";
 import { fireDB } from "../../../firebase/FirebaseConfig";
 import { PersonalInformation, UserCradesial } from "./components/data";
@@ -25,7 +24,8 @@ import TitleBox from "../../../components/components/TitleBox";
 import { toast } from "react-toastify";
 import DashboardLayout from "../../components/DashboardLayout";
 import { useLocation, useNavigate } from "react-router-dom";
-// import { franchiseValidationSchema } from "./components/schema";
+import { useDispatch } from "react-redux";
+import { updateBranch, updateExistingBranch } from "../../../redux/admin/branchSlice";
 
 const UpdateBranch = () => {
   const [selectedState, setSelectedState] = useState("");
@@ -36,7 +36,7 @@ const UpdateBranch = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const franchiseId = location.state ? location.state.franchiseId : null;
-  // console.log(branchData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // Fetch branch data based on branchId
@@ -52,7 +52,7 @@ const UpdateBranch = () => {
 
   useEffect(() => {
     if (branchData && branchData.district) {
-      setSelectedState([branchData.state]);
+      setSelectedState(branchData.state);
       setCities([branchData.district]);
     }
   }, [branchData]);
@@ -124,31 +124,46 @@ const UpdateBranch = () => {
 
   const onSubmit = async (values) => {
     try {
-      const franchiseDocRef = doc(fireDB, "franchiseData", franchiseId);
-      await updateDoc(franchiseDocRef, {
-        directorName: values.directorName,
-        gender: values.gender,
-        primaryPhone: values.primaryPhone,
-        email: values.email,
-        documentType: values.documentType,
-        documentNumber: values.documentNumber,
-        centerName: values.centerName,
-        officePhone: values.officePhone,
-        state: values.state,
-        district: values.district || "",
-        policeStation: values.policeStation,
-        pinCode: values.pinCode,
-        centerPlace: values.centerPlace,
-        wathsappPhone: values.wathsappPhone,
-        userName: values.userName,
-        password: values.password,
-      });
-      toast.success("Center Updated Successfully");
-      navigate("/branch");
+      const branchDocRef = doc(fireDB, 'franchiseData', franchiseId);
+      const branchDocSnapshot = await getDoc(branchDocRef);
+  
+      if (branchDocSnapshot.exists()) {
+        const existingBranchData = branchDocSnapshot.data();
+        const updatedBranchData = {
+          ...existingBranchData, // Keep existing data like centerId and createdAt
+          ...values, // Overwrite with new values
+          id: franchiseId, // Ensure the id is included
+          centerId: existingBranchData.centerId,
+          createdAt: existingBranchData.createdAt,
+          logoUrl: existingBranchData.logoUrl,
+          signUrl: existingBranchData.signUrl,
+        };
+  
+        await updateDoc(branchDocRef, updatedBranchData);
+  
+        // Update local storage
+        const cachedBranches = JSON.parse(localStorage.getItem('branches')) || [];
+  
+        console.log('Cached Branches:', cachedBranches);
+  
+        const updatedBranches = cachedBranches.map(branch =>
+          branch.id === updatedBranchData.id ? updatedBranchData : branch
+        );
+  
+        console.log('Updated Branches:', updatedBranches);
+  
+        localStorage.setItem('branches', JSON.stringify(updatedBranches));
+        console.log('LocalStorage updated successfully');
+  
+        dispatch(updateBranch(updatedBranchData));
+        toast.success("Center Updated Successfully");
+        navigate("/branch");
+      }
     } catch (e) {
       console.error("Error updating document: ", e);
     }
   };
+  
 
   return (
     <>
@@ -201,8 +216,7 @@ const UpdateBranch = () => {
                 password: branchData?.password || "",
               }}
               onSubmit={onSubmit}
-              // validationSchema={franchiseValidationSchema}
-              enableReinitialize={true} // Add this line
+              enableReinitialize={true}
             >
               {(formikProps) => (
                 <Form>
@@ -275,9 +289,12 @@ const UpdateBranch = () => {
                                 <Select
                                   bgColor="black.5"
                                   name={list.name}
-                                  {...field}
+                                  value={formikProps.values[list.name]}
                                   onChange={(e) => {
-                                    field.onChange(e);
+                                    formikProps.setFieldValue(
+                                      list.name,
+                                      e.target.value
+                                    );
                                     if (list.onChange) {
                                       list.onChange(e);
                                     }
@@ -293,9 +310,15 @@ const UpdateBranch = () => {
                               ) : (
                                 <Input
                                   bgColor="black.5"
-                                  name="centername"
+                                  name={list.name}
+                                  value={formikProps.values[list.name]}
+                                  onChange={(e) => {
+                                    formikProps.setFieldValue(
+                                      list.name,
+                                      e.target.value
+                                    );
+                                  }}
                                   type={list.type}
-                                  readOnly={list.readOnly}
                                   {...field}
                                 />
                               )}
@@ -306,7 +329,7 @@ const UpdateBranch = () => {
                       ))}
                     </SimpleGrid>
 
-                    <TitleBox title="Login Information" />
+                    <TitleBox title=" User Credentials" />
 
                     <SimpleGrid columns={2} px={7} columnGap={4} rowGap={4}>
                       {UserCradesial.map((list, index) => (
@@ -319,8 +342,14 @@ const UpdateBranch = () => {
                               <Input
                                 bgColor="black.5"
                                 name={list.name}
+                                value={formikProps.values[list.name]}
+                                onChange={(e) => {
+                                  formikProps.setFieldValue(
+                                    list.name,
+                                    e.target.value
+                                  );
+                                }}
                                 type={list.type}
-                                readOnly={list.readOnly} // Use a property from the list item to determine readOnly status
                                 {...field}
                               />
                               <FormErrorMessage>{meta.error}</FormErrorMessage>
@@ -330,17 +359,45 @@ const UpdateBranch = () => {
                       ))}
                     </SimpleGrid>
 
-                    <Checkbox defaultChecked px={6}>
-                      I agree with{" "}
-                      <Text as="span" color="p.purple">
-                        Terms & Conditions.
-                      </Text>
-                    </Checkbox>
+                    <Field name="active">
+                      {({ field, meta }) => (
+                        <FormControl
+                          display="flex"
+                          alignItems="center"
+                          justifyContent="center"
+                        >
+                          <Checkbox
+                            name="active"
+                            value={formikProps.values["active"]}
+                            colorScheme="green"
+                            size="lg"
+                            onChange={(e) => {
+                              formikProps.setFieldValue(
+                                "active",
+                                e.target.checked
+                              );
+                            }}
+                            {...field}
+                          />
+                          <FormLabel
+                            htmlFor="active"
+                            mb="0"
+                            ml="10px"
+                            fontSize="2xl"
+                            fontWeight="bold"
+                          >
+                            Active
+                          </FormLabel>
+                        </FormControl>
+                      )}
+                    </Field>
+
                     <Button
-                      leftIcon={<MdKeyboardDoubleArrowRight />}
-                      m="10px 50px"
-                      size="md"
+                      rightIcon={<MdKeyboardDoubleArrowRight />}
+                      colorScheme="green"
                       type="submit"
+                      width="200px"
+                      alignSelf="center"
                     >
                       Update Center
                     </Button>

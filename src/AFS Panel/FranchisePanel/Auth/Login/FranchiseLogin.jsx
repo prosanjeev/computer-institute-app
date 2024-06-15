@@ -23,7 +23,7 @@ import { login } from "../../../redux/franchise/authSlice";
 import { toast } from "react-toastify";
 
 const loginValidationSchema = object({
-  userName: string().required("Email is Required"),
+  username: string().required("Email is Required"),
   password: string()
     .min(6, "Password must be at least 6 characters")
     .required("Password is required"),
@@ -39,7 +39,7 @@ const FranchiseLogin = () => {
     try {
       const q = query(
         ref,
-        where("userName", "==", initialValues.userName),
+        where("username", "==", initialValues.username),
         where("password", "==", initialValues.password)
       );
       const querySnapshot = await getDocs(q);
@@ -66,7 +66,14 @@ const FranchiseLogin = () => {
 
   return (
     <Container>
-      <Center minH="100vh">
+       <Center >
+            <Stack fontSize='20px'>
+              <Text>Credentials</Text>
+              <Text>username: mtech101</Text>
+              <Text>password: 12345678</Text>
+            </Stack>
+          </Center>
+      <Center minH="85vh">
         <Card
           p={6}
           borderRadius="16px"
@@ -81,7 +88,7 @@ const FranchiseLogin = () => {
 
           <Formik
             initialValues={{
-              userName: "",
+              username: "",
               password: "",
             }}
             onSubmit={handleLogin}
@@ -92,19 +99,19 @@ const FranchiseLogin = () => {
                 <Stack mt={8} spacing={6}>
                   <FormControl
                     isInvalid={
-                      formikProps.errors.userName &&
-                      formikProps.touched.userName
+                      formikProps.errors.username &&
+                      formikProps.touched.username
                     }
                   >
-                    <FormLabel htmlFor="userName">UserName:</FormLabel>
+                    <FormLabel htmlFor="username">username:</FormLabel>
                     <Input
-                      id="userName"
+                      id="username"
                       type="text"
                       placeholder="Enter your username"
-                      {...formikProps.getFieldProps("userName")}
+                      {...formikProps.getFieldProps("username")}
                     />
                     <FormErrorMessage>
-                      {formikProps.errors.userName}
+                      {formikProps.errors.username}
                     </FormErrorMessage>
                   </FormControl>
 

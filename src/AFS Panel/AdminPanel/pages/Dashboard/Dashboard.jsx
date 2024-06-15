@@ -22,13 +22,14 @@ import {
 } from "../../../redux/admin/branchSlice";
 import { useEffect } from "react";
 import { selectAllCourses } from "../../../redux/course/coursesSelectors";
-import { fetchCourses } from "../../../redux/course/coursesActions";
+// import { fetchCourses } from "../../../redux/course/coursesSlice";
 import { selectStudents } from "../../../redux/selectors/franchiseStudentsSelectors";
 import { fetchStudents } from "../../../redux/actions/franchiseStudentsActions";
 import { selectStudentCoursesSize } from "../../../redux/selectors/enrollmentSelectors";
 import DashboardChart from "./components/DashboardChart";
 import DashboardCard from "../../../components/dashboardCard/DashboardCard";
 import DashboardBigCard from "../../../components/dashboardCard/DashboardBigCard";
+import { fetchCourses } from "../../../redux/course/coursesActions";
 
 const iconMapping = {
   Branch: FaCodeBranch,
@@ -154,7 +155,7 @@ const Dashboard = () => {
           </GridItem>
         </Grid>
 
-        <Flex direction="column" gap={6} >
+        <Flex direction="column" gap={6}>
           <DashboardBigCard
             title="Revenue"
             value="₹3,50,000"

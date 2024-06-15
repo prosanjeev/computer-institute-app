@@ -1,0 +1,71 @@
+[
+  {
+    "courseId": "ADCA1",
+    "categoryName": "Diploma",
+    "courseName": "Advance Diploma in Computer Application",
+    "coursePhotoUrl": "https://firebasestorage.googleapis.com/v0/b/m-tech-computer-institute.appspot.com/o/courses%2FDCA%2FPhoto?alt=media&token=d977722b-8f94-40f9-a5d8-22434d2e5f2f",
+    "duration": "1 Year",
+    "fee": "200",
+    "shortName": "ADCA",
+    "syllabus": [
+      {
+        "module": "1",
+        "topics": ["MS Office", "Internet", "Basic", "Typing"]
+      },
+      {
+        "module": "2",
+        "topics": ["Photoshop", "PageMaker", "Tally Prime"]
+      }
+    ]
+  },
+  {
+    "courseId": "2",
+    "categoryName": "Degree",
+    "courseName": "Computer Certified Application",
+    "coursePhotoUrl": "https://firebasestorage.googleapis.com/v0/b/m-tech-computer-institute.appspot.com/o/courses%2FDCA%2FPhoto?alt=media&token=d977722b-8f94-40f9-a5d8-22434d2e5f2f",
+    "duration": "6 Month",
+    "fee": "300",
+    "shortName": "CCA",
+    "syllabus": ["MS Office", "Internet", "Basic", "Typing"]
+  },
+  {
+    "courseId": "3",
+    "categoryName": "Diploma",
+    "courseName": "Diploma in Computer Application",
+    "coursePhotoUrl": "https://firebasestorage.googleapis.com/v0/b/m-tech-computer-institute.appspot.com/o/courses%2FDCA%2FPhoto?alt=media&token=d977722b-8f94-40f9-a5d8-22434d2e5f2f",
+    "duration": "6 Month",
+    "fee": "200",
+    "shortName": "DCA",
+    "syllabus": ["MS Office", "Internet", "Basic", "Typing"]
+  },
+  {
+    "courseId": "4",
+    "categoryName": "Diploma",
+    "courseName": "Diploma in Tally Prime ERP",
+    "coursePhotoUrl": "https://firebasestorage.googleapis.com/v0/b/m-tech-computer-institute.appspot.com/o/courses%2FDCA%2FPhoto?alt=media&token=d977722b-8f94-40f9-a5d8-22434d2e5f2f",
+    "duration": "6 Month",
+    "fee": "200",
+    "shortName": "Tally",
+    "syllabus": ["MS Office", "Internet", "Basic", "Typing"]
+  },
+  {
+    "courseId": "5",
+    "categoryName": "Degree",
+    "courseName": "Desktop Publicishing",
+    "coursePhotoUrl": "https://firebasestorage.googleapis.com/v0/b/m-tech-computer-institute.appspot.com/o/courses%2FDCA%2FPhoto?alt=media&token=d977722b-8f94-40f9-a5d8-22434d2e5f2f",
+    "duration": "3 Month",
+    "fee": "200",
+    "shortName": "DTP",
+    "syllabus": ["MS Office", "Internet", "Basic", "Typing"]
+  },
+  {
+    "courseId": "6",
+    "categoryName": "Diploma",
+    "courseName": "Diploma in Hindi and English Typing",
+    "coursePhotoUrl": "https://firebasestorage.googleapis.com/v0/b/m-tech-computer-institute.appspot.com/o/courses%2FDCA%2FPhoto?alt=media&token=d977722b-8f94-40f9-a5d8-22434d2e5f2f",
+    "duration": "6 Month",
+    "fee": "200",
+    "shortName": "Typing",
+    "syllabus": ["MS Office", "Internet", "Basic", "Typing"]
+  }
+]

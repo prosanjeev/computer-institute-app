@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { fireDB } from './firebase'; // Firebase instance
 import { selectAllCourses } from "../../../redux/course/coursesSelectors";
 import { fireDB } from "../../../firebase/FirebaseConfig";
-import { fetchCourses } from "../../../redux/course/coursesActions";
+// import { fetchCourses } from "../../../redux/course/coursesSlice";
 import FranchiseDashboardLayout from "../../components/FranchiseDashboardLayout";
 import { addDoc, collection, doc, getDoc, updateDoc } from "firebase/firestore";
 import {
@@ -18,6 +18,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { toast } from "react-toastify";
+import { fetchCourses } from "../../../redux/course/coursesActions";
 
 const CourseSelectionPage = () => {
   const [selectedCourse, setSelectedCourse] = useState("");

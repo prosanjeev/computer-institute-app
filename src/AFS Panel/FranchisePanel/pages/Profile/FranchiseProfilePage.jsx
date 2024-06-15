@@ -46,7 +46,7 @@ const FranchiseProfilePage = () => {
     wathsappPhone = "",
     state = "",
     district = "",
-    userName = "",
+    username = "",
     password = "",
     createdAt,
   } = branchData || {};

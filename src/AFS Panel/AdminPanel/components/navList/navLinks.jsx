@@ -24,7 +24,7 @@ export const navLinks = [
     },
     {
       icon: IoIosGitBranch,
-      text: "Manage Branch",
+      text: "Manage Center",
       link: "#",
       submenu: [
         {
@@ -40,27 +40,27 @@ export const navLinks = [
     },
     {
       icon: CiWallet,
-      text: "Branch Wallet",
+      text: "Center Wallet",
       link: "/branch-wallet",
     },
     {
       icon: PiStudent,
       text: "Student",
-      link: "#",
-      submenu: [
-        {
-          text: "Add Student",
-          link: "#",
-        },
-        {
-          text: "View Students",
-          link: "#",
-        },
-        {
-          text: "View Students List",
-          link: "/student",
-        },
-      ],
+      link: "/student",
+      // submenu: [
+      //   {
+      //     text: "Add Student",
+      //     link: "#",
+      //   },
+      //   {
+      //     text: "View Students",
+      //     link: "#",
+      //   },
+      //   {
+      //     text: "View Students List",
+      //     link: "/student",
+      //   },
+      // ],
     },
     {
       icon: SiCoursera,

@@ -82,7 +82,7 @@ const Login = ({ title }) => {
 
   return (
     <Container>
-      <Center minH="100vh">
+      <Center minH="85vh">
         <Card
           p={6}
           borderRadius="16px"
@@ -90,6 +90,8 @@ const Login = ({ title }) => {
           border="2px solid #d4cfcf"
           position="relative"
         >
+         
+
           {/* {loading && <Loader />} */}
           <Text textStyle="h1"> {title} </Text>
           <Text mt={4} textStyle="p2" color="black.60">
