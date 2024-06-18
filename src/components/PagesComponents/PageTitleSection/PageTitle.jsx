@@ -7,7 +7,7 @@ const PageTitle = (props) => {
         as="div"
         w="100vw"
         h={{base:"220px", md:"280px"}}
-        bgImage="url(https://source.unsplash.com/1540x300/?computer)"
+        bgImage="/pagetitle.png"
         bgSize="cover"
         filter="brightness(40%) contrast(70%)"
       ></Box>

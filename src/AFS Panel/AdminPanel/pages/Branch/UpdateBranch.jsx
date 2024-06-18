@@ -25,7 +25,10 @@ import { toast } from "react-toastify";
 import DashboardLayout from "../../components/DashboardLayout";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { updateBranch, updateExistingBranch } from "../../../redux/admin/branchSlice";
+import {
+  updateBranch,
+  updateExistingBranch,
+} from "../../../redux/admin/branchSlice";
 
 const UpdateBranch = () => {
   const [selectedState, setSelectedState] = useState("");
@@ -124,9 +127,9 @@ const UpdateBranch = () => {
 
   const onSubmit = async (values) => {
     try {
-      const branchDocRef = doc(fireDB, 'franchiseData', franchiseId);
+      const branchDocRef = doc(fireDB, "franchiseData", franchiseId);
       const branchDocSnapshot = await getDoc(branchDocRef);
-  
+
       if (branchDocSnapshot.exists()) {
         const existingBranchData = branchDocSnapshot.data();
         const updatedBranchData = {
@@ -138,23 +141,24 @@ const UpdateBranch = () => {
           logoUrl: existingBranchData.logoUrl,
           signUrl: existingBranchData.signUrl,
         };
-  
+
         await updateDoc(branchDocRef, updatedBranchData);
-  
+
         // Update local storage
-        const cachedBranches = JSON.parse(localStorage.getItem('branches')) || [];
-  
-        console.log('Cached Branches:', cachedBranches);
-  
-        const updatedBranches = cachedBranches.map(branch =>
+        const cachedBranches =
+          JSON.parse(localStorage.getItem("branches")) || [];
+
+        console.log("Cached Branches:", cachedBranches);
+
+        const updatedBranches = cachedBranches.map((branch) =>
           branch.id === updatedBranchData.id ? updatedBranchData : branch
         );
-  
-        console.log('Updated Branches:', updatedBranches);
-  
-        localStorage.setItem('branches', JSON.stringify(updatedBranches));
-        console.log('LocalStorage updated successfully');
-  
+
+        console.log("Updated Branches:", updatedBranches);
+
+        localStorage.setItem("branches", JSON.stringify(updatedBranches));
+        console.log("LocalStorage updated successfully");
+
         dispatch(updateBranch(updatedBranchData));
         toast.success("Center Updated Successfully");
         navigate("/branch");
@@ -163,7 +167,6 @@ const UpdateBranch = () => {
       console.error("Error updating document: ", e);
     }
   };
-  
 
   return (
     <>
@@ -310,6 +313,7 @@ const UpdateBranch = () => {
                               ) : (
                                 <Input
                                   bgColor="black.5"
+                                  readOnly={list.readOnly}
                                   name={list.name}
                                   value={formikProps.values[list.name]}
                                   onChange={(e) => {
@@ -340,6 +344,7 @@ const UpdateBranch = () => {
                                 {list.label}
                               </FormLabel>
                               <Input
+                                readOnly={list.readOnly}
                                 bgColor="black.5"
                                 name={list.name}
                                 value={formikProps.values[list.name]}

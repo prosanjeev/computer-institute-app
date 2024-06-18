@@ -94,11 +94,10 @@ const App = () => {
 
                         <Route path="services" element={<SerivicesGrid />} />
 
-                        <Route path='contact-us' element={<ContactUs />} />
+                        <Route path='contact' element={<ContactUs />} />
                         <Route path='find-branch' element={<FindBranch />} />
                         <Route path='our-team' element={<OurTeam />} />
                     </Route>
-
 
                     <Route path='admin-login' element={<AdminLogin />} />
                     <Route element={<AdminPrivateRoute />}>

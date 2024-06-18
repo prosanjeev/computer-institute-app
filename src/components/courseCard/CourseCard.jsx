@@ -1,4 +1,5 @@
 import { Box, Image, Text, Button, Badge, Stack } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const CourseCard = ({ url, title, details }) => {
   return (
@@ -43,11 +44,11 @@ const CourseCard = ({ url, title, details }) => {
           </Text>
         </Box>
 
-        <Box>
+        <Link to='/contact'>
           <Button colorScheme="teal" variant="outline">
            Start Course
           </Button>
-        </Box>
+        </Link>
       </Stack>
     </Stack>
   );
