@@ -55,7 +55,7 @@ export const menuItems = [
     },
     {
       label: 'CONTACT', link: '#', subMenu: [
-        { label: 'Contact Us', link: '/contact-us' },
+        { label: 'Contact Us', link: '/contact' },
         { label: 'Find Branch', link: '/find-branch' },
         { label: 'Our Team', link: '/our-team' }
       ]
