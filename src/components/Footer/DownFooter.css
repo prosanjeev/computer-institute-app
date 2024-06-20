@@ -43,8 +43,9 @@
   padding: 20px;
 }
 .footer-title {
+  color: white;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 29px;
 }
 

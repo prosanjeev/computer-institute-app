@@ -19,7 +19,7 @@ const QueryForm = () => {
             <Input type="text" placeholder="Enter your email address" mb={{ base: 2, md: 0 }} bgColor='white' />
             </FormControl>
             </Stack>
-            <Button  mt={{ base: 0, md: 2 }} type="submit"  colorScheme='orange'>SUBSCRIBE</Button>
+            <Button  mt={{ base: 0, md: 2 }} type="submit" variant='outline'  colorScheme='blue' bg='#f3f3ff'>SUBSCRIBE</Button>
 
         </Box>
     )

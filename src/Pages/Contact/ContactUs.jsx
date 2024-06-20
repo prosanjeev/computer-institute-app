@@ -77,7 +77,7 @@ const ContactUs = () => {
             bgGradient="linear(to-l, #7928CA,#FF0080)"
             bgClip="text"
             fontSize="5xl"
-            fontWeight="extrabold"
+            fontWeight="bold"
           >
             We are just a phone call away !
           </Text>
