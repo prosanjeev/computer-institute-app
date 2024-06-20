@@ -33,8 +33,9 @@ const StudentVerification = () => {
     <>
       <PageTitle pagetitle="STUDENT VERIFICATION" />
       <Flex
-        w={{ md: "1000px", base: "90vw" }}
+        py={10}
         mx="auto"
+        w={{ md: "60vw", base: "90vw" }}
         flexWrap="wrap"
         gap={{ base: "2" }}
       >

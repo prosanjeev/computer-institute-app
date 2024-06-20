@@ -8,7 +8,14 @@ const DashboardLayout = ({ title, children }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   return (
-    <Flex bg="#f0f3f5" align="center" h="100vh">
+    <Flex
+      bg="#f0f3f5"
+      align="center"
+      w="100vw"
+      h="100vh"
+      pos="fixed"
+      justify="center"
+    >
       <Box
         display={{
           base: "none",

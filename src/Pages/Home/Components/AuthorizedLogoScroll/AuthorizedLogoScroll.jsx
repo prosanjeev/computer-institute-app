@@ -47,7 +47,7 @@ const AuthorizedLocationsScroll = () => {
         right={-100} // Start from the right
       >
         {authorizedLocations.map((logoUrl, index) => (
-          <Box key={index} w='120px' p={2} border='1px solid gray' borderRadius='10px'>
+          <Box key={index} w='120px' p={2} border='1px solid #d4cfcf' boxShadow="xl" borderRadius='10px'>
             <Image
               src={logoUrl}
               alt={`Logo ${index + 1}`}

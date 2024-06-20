@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { menuItems } from "./data/data";
+import { c_name } from "../../../info/Info";
 
 function NAvBarNew() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ function NAvBarNew() {
   };
 
   return (
-    <Box minW="100vw" bgColor=" #034C7F">
+    <Box w="100vw" bgColor=" #034C7F">
       <Flex
         as="nav"
         align="center"
@@ -79,13 +80,14 @@ function NAvBarNew() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>M-Tech Computer Institute</DrawerHeader>
+          <DrawerHeader>{c_name}</DrawerHeader>
           <DrawerBody>
             {menuItems.map((list) => (
               <React.Fragment key={list.label}>
-                <Button
+               <Link to={list.link}>
+               <Button
                   colorScheme="teal"
-                  mb={2}
+                  mb={3}
                   w="100%"
                   key={list.label}
                   onClick={() => handleSubMenuToggle(list.label)}
@@ -93,6 +95,7 @@ function NAvBarNew() {
                   {list.label}
                   {list.subMenu && <IoIosArrowDown />}
                 </Button>
+               </Link>
                 {list.subMenu && openSubMenu === list.label && (
                   <Box ml={4}>
                     {list.subMenu.map((subMenuItem) => (

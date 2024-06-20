@@ -36,7 +36,7 @@ function TopHeader() {
   ];
 
   return (
-    <Stack bgColor="#F4F5F6">
+    <Stack bgColor="#F4F5F6" w="100vw">
       <Box as="flex" bgColor="#F5F6F7" w="100vw">
         <Flex w="80%" justify="space-around" mx="auto" flexWrap="wrap">
           <HStack

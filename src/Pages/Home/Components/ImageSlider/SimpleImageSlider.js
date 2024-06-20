@@ -7,7 +7,6 @@ const page = 1; // Assuming you want data from page 1
 const limit = 6; // Limiting the number of data items to 10
 
 const SimpleImageSlider = () => {
-
     const [images, setImages] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [loading, setLoading] = useState(true);

@@ -45,13 +45,18 @@ const DownFooter = () => {
   ];
 
   return (
-    <Box bg='#E1E3E9' w="100%" borderTop="1px solid #DADCE0">
+    <Box bg="#E1E3E9" w="100vw" borderTop="1px solid #DADCE0">
       <Flex
         direction={{ base: "column", md: "row" }}
         className="footer-contantant"
         gap={4}
       >
-        <Box flex="1" mr={{ base: 0, md: 4 }} mb={{ base: 4, md: 0 }} color="#939394">
+        <Box
+          flex="1"
+          mr={{ base: 0, md: 4 }}
+          mb={{ base: 4, md: 0 }}
+          color="#939394"
+        >
           <Heading as="h3" size="md" color="black" className="footer-title">
             CONTACT US
           </Heading>
@@ -94,9 +99,22 @@ const DownFooter = () => {
           <QueryForm />
         </Box>
       </Flex>
-      <Text textAlign="center" className="copyright-contant">
-        {c_name} © 2023 | <Link to="#">Privacy Policy</Link>
-      </Text>
+
+   {/* copyright */}
+      <Flex
+        flexWrap="wrap"
+        align={{ base: "center" }}
+        justify={{ base: "center" }}
+        py={{ base: 8 }}
+        borderTop="1px solid gray"
+      >
+        <Text>{c_name} © 2023 |</Text>
+        <Link to="#" color="blue">
+          <Text color="blue"> Privacy Policy</Text>
+        </Link>
+      </Flex>
+
+
     </Box>
   );
 };

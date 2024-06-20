@@ -55,14 +55,13 @@ const FindBranch = () => {
       fetchedFranchises.push({ id: doc.id, ...doc.data() });
     });
     setFranchiseData(fetchedFranchises);
-  
+
     if (fetchedFranchises.length > 0) {
       setSearchResult("Data found");
     } else {
       setSearchResult("Data not found");
     }
   }
-  
 
   function handleStateChange(event) {
     const newState = event.target.value;
@@ -123,15 +122,13 @@ const FindBranch = () => {
                       {CenterInformation.map((list, index) => (
                         <Field name={list.name} key={index}>
                           {({ field, meta }) => (
-                            <FormControl
-                              isInvalid={meta.error && meta.touched}
-                              
-                            >
+                            <FormControl isInvalid={meta.error && meta.touched}>
                               <FormLabel htmlFor={list.name}>
                                 {list.label}
                               </FormLabel>
                               {list.type === "select" ? (
-                                <Select fontSize='20px'
+                                <Select
+                                  fontSize="20px"
                                   bgColor="black.5"
                                   name={list.name}
                                   {...field} // Set the value prop to the field's value
@@ -158,9 +155,7 @@ const FindBranch = () => {
                                   {...field}
                                 />
                               )}
-                              <FormErrorMessage>
-                                {meta.error}
-                              </FormErrorMessage>
+                              <FormErrorMessage>{meta.error}</FormErrorMessage>
                             </FormControl>
                           )}
                         </Field>
@@ -171,9 +166,9 @@ const FindBranch = () => {
                         Search Center
                       </Button>
                     </Center>
-                   <Divider/>
+                    <Divider />
                     <Table variant="striped" colorScheme="gray.200">
-                      <Thead bg='gray.200'>
+                      <Thead bg="gray.200">
                         <Tr>
                           <Th>Sr. No.</Th>
                           <Th>Centre Code</Th>
@@ -183,15 +178,26 @@ const FindBranch = () => {
                         </Tr>
                       </Thead>
                       <Tbody>
-                        {franchiseData.map((franchise, index) => (
-                          <Tr key={franchise.id}>
-                            <Td>{index + 1}</Td>
-                            <Td>{franchise.centerId}</Td>
-                            <Td>{franchise.centerName}</Td>
-                            <Td>{franchise.directorName}</Td>
-                            <Td>{franchise.centerPlace}, {franchise.policestation}</Td>
+                        {franchiseData && franchiseData.length > 0 ? (
+                          franchiseData.map((franchise, index) => (
+                            <Tr key={franchise.id}>
+                              <Td>{index + 1}</Td>
+                              <Td>{franchise.centerId}</Td>
+                              <Td>{franchise.centerName}</Td>
+                              <Td>{franchise.directorName}</Td>
+                              <Td>
+                                {franchise.centerPlace},{" "}
+                                {franchise.policestation}
+                              </Td>
+                            </Tr>
+                          ))
+                        ) : (
+                          <Tr>
+                            <Td colSpan="5" textAlign="center">
+                              No data available
+                            </Td>
                           </Tr>
-                        ))}
+                        )}
                       </Tbody>
                     </Table>
                   </Stack>

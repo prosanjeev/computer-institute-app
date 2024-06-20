@@ -1,5 +1,5 @@
 export const menuItems = [
-    { label: 'HOME', link: '/' },
+    { label: 'HOME', link: "/" },
     {
       label: 'ABOUT US', link: '/about-company', 
       // subMenu: [

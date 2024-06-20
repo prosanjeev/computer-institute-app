@@ -48,13 +48,7 @@
   line-height: 29px;
 }
 
-.copyright-contant {
-  width: 80%;
-  border-top: 1px solid rgb(194, 168, 168);
-  margin: 0 auto;
-  font-size: 15px;
-  line-height: 60px;
-}
+
 
 @media (min-width: 0px) and (max-width: 600px) {
   .footer-box {
@@ -96,12 +90,5 @@
     line-height: 29px;
   }
 
-  .copyright-contant {
-    width: 80%;
-    border-top: 1px solid rgb(194, 168, 168);
-    margin: 0 auto;
-    font-size: 15px;
-    line-height: 60px;
-    font-weight: 400;
-  }
+  
 }

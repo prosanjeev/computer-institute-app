@@ -60,97 +60,84 @@ import SerivicesGrid from "./Pages/services/SerivicesGrid";
 import DiplomaCourses from "./Pages/Courses/DiplomaCourses";
 // import LanguageCourses from "./Pages/courses/LanguageCourses";
 import ProfessionalCourses from "./Pages/Courses/ProfessionalCourses";
+import { Flex } from "@chakra-ui/react";
 // import StudentListPage from "./AFS Panel/FranchisePanel/pages/Student/AllStudents";
 
 const App = () => {
 
     return (
+       
         <MyState>
-            <Router>
-                <Routes>
-                    <Route path='/' element={<MainLayout />}>
-                        <Route path='' element={<Home />} />
-                        <Route path='about-company' element={<AboutCompany />} />
-                        <Route path='chairman-message' element={<ChairmanMessage />} />
-                        <Route path='our-vision-and-mission' element={<OurVisionAndMission />} />
-                        <Route path='our-goal' element={<OurGoal />} />
+      <Router>
+        <Flex direction="column" maxH='100vh' maxW='100vw'>
+          <Routes>
+            <Route path="/" element={<MainLayout />}>
+              <Route path="" element={<Home />} />
+              <Route path="about-company" element={<AboutCompany />} />
+              <Route path="chairman-message" element={<ChairmanMessage />} />
+              <Route path="our-vision-and-mission" element={<OurVisionAndMission />} />
+              <Route path="our-goal" element={<OurGoal />} />
+              <Route path="courses" element={<DiplomaCourses />} />
+              <Route path="professional-courses" element={<ProfessionalCourses />} />
+              <Route path="student-registration" element={<StudentRegistration />} />
+              <Route path="student-verification" element={<StudentVerification />} />
+              <Route path="student-login" element={<StudentLogin />} />
+              <Route path="admit-card" element={<AdmitCard />} />
+              <Route path="certificate-verification" element={<CertificateVerification />} />
+              <Route path="franchise-enquiry" element={<ApplyOnline />} />
+              <Route path="center-verification" element={<CenterVerification />} />
+              <Route path="photos" element={<Photos />} />
+              <Route path="videos" element={<Videos />} />
+              <Route path="services" element={<SerivicesGrid />} />
+              <Route path="contact" element={<ContactUs />} />
+              <Route path="find-branch" element={<FindBranch />} />
+              <Route path="our-team" element={<OurTeam />} />
+            </Route>
 
-                        {/* <Route path='basic-courses' element={<BasicCourses />} /> */}
-                        <Route path='courses' element={<DiplomaCourses />} />
-                        {/* <Route path='language-courses' element={<LanguageCourses />} /> */}
-                        <Route path='professional-courses' element={<ProfessionalCourses />} />
+            <Route path="admin-login" element={<AdminLogin />} />
+            <Route element={<AdminPrivateRoute />}>
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="student" element={<AllStudent />} />
+              <Route path="add-branch" element={<AddBranch />} />
+              <Route path="branch" element={<AllBranch />} />
+              <Route path="update-branch" element={<UpdateBranch />} />
+              <Route path="course-category" element={<CourseCategoryPage />} />
+              <Route path="contact-us-query" element={<ContactUsQuery />} />
+              <Route path="branch-wallet" element={<BranchWallet />} />
+              <Route path="add-course" element={<AddCourse />} />
+              <Route path="all-courses" element={<AllCourses />} />
+              <Route path="update-course" element={<UpdateCourse />} />
+            </Route>
 
-                        <Route path='student-registration' element={<StudentRegistration />} />
-                        <Route path='student-verification' element={<StudentVerification />} />
-                        <Route path='student-login' element={<StudentLogin />} />
-                        <Route path='admit-card' element={<AdmitCard />} />
-                        <Route path='certificate-verification' element={<CertificateVerification />} />
+            <Route path="franchise-login" element={<FranchiseLogin />} />
+            <Route element={<FranchisePrivateRoute />}>
+              <Route path="franchise-dashboard" element={<FranchiseDashboard />} />
+              <Route path="wallet-recharge" element={<WalletRechargeRequestForm />} />
+              <Route path="franchise-profile" element={<FranchiseProfilePage />} />
+              <Route path="authorisation-certificate" element={<PrintCenterCertificate />} />
+              <Route path="add-student" element={<AddStudentPage />} />
+              <Route path="update-student" element={<UpdateStudentPage />} />
+              <Route path="students-list" element={<StudentListPage />} />
+              <Route path="course-selection" element={<CourseSelectionPage />} />
+              <Route path="student-certificate" element={<PrintStudentCertificate />} />
+              <Route path="student-marksheet" element={<PrintMarksheet />} />
+            </Route>
 
-                        <Route path='franchise-enquiry' element={<ApplyOnline />} />
-                        <Route path='center-verification' element={<CenterVerification />} />
+            <Route path="student-dashboard" element={<StudentDashboard />} />
+            <Route path="practice-test" element={<PracticeTest />} />
 
-                        <Route path='photos' element={<Photos />} />
-                        <Route path='videos' element={<Videos />} />
-
-                        <Route path="services" element={<SerivicesGrid />} />
-
-                        <Route path='contact' element={<ContactUs />} />
-                        <Route path='find-branch' element={<FindBranch />} />
-                        <Route path='our-team' element={<OurTeam />} />
-                    </Route>
-
-                    <Route path='admin-login' element={<AdminLogin />} />
-                    <Route element={<AdminPrivateRoute />}>
-                        <Route path='dashboard' element={<Dashboard />} />
-                        {/* <Route path='support' element={<Support />} /> */}
-                        <Route path='student' element={<AllStudent />} />
-                        <Route path="add-branch" element={<AddBranch />} />
-                        <Route path='branch' element={<AllBranch />} />
-                        <Route path="update-branch" element={<UpdateBranch />} />
-                        <Route path='course-category' element={<CourseCategoryPage />} />
-                        <Route path='contact-us-query' element={<ContactUsQuery />} />
-                        <Route path='branch-wallet' element={<BranchWallet />} />
-                        <Route path="add-course" element={<AddCourse />} />
-                        <Route path="all-courses" element={<AllCourses />} />
-                        <Route path="update-course" element={<UpdateCourse />} />
-                    </Route>
-
-                    <Route path='franchise-login' element={<FranchiseLogin />} />
-                    <Route element={<FranchisePrivateRoute />}>
-                        <Route path='franchise-dashboard' element={<FranchiseDashboard />} />
-                        <Route path='wallet-recharge' element={<WalletRechargeRequestForm />} />
-                        <Route path='franchise-profile' element={<FranchiseProfilePage />} />
-                        {/* <Route path="authorisation-certificate" element={<FranchiseCertificate />} /> */}
-                        <Route path="authorisation-certificate" element={<PrintCenterCertificate />} />
-                        <Route path="add-student" element={<AddStudentPage />} />
-                        <Route path="update-student" element={<UpdateStudentPage />} />
-                        <Route path="students-list" element={<StudentListPage />} />
-                        <Route path="course-selection" element={<CourseSelectionPage />} />
-                        <Route path="student-certificate" element={<PrintStudentCertificate />} />
-                        <Route path="student-marksheet" element={<PrintMarksheet />} />
-                    </Route>
-
-                    <Route path='student-dashboard' element={<StudentDashboard />} />
-                    <Route path='practice-test' element={<PracticeTest />} />
-
-                    {/* <Route path="/signup*" element={<Signup />} /> */}
-                    {/* <Route path="/login" element={<Login />} /> */}
-                    <Route path="*" element={<> not found</>} />
-                    <Route path="branchpage" element={<BranchPage />} />
-
-                    {/* <Route path="succ" element={<PasswordResetDone/>} /> */}
-                    <Route path="forgot-password" element={<ForgotPassword />} />
-
-                    <Route path="id-card" element={<StudentIDCard />} />
-                    <Route path="idcard" element={<PrintIdCard />} />
-                    <Route path="qr-verification/:regNumber" element={<QrVerification />} />
-                    <Route path="user-notice" element={<NotificationForUser />} />
-                    {/* <Route path="chakra-certificate" element={<ChakraCertificate/>} /> */}
-
-                </Routes>
-            </Router>
-
-        </MyState>
+            <Route path="*" element={<>Not Found</>} />
+            <Route path="branchpage" element={<BranchPage />} />
+            <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route path="id-card" element={<StudentIDCard />} />
+            <Route path="idcard" element={<PrintIdCard />} />
+            <Route path="qr-verification/:regNumber" element={<QrVerification />} />
+            <Route path="user-notice" element={<NotificationForUser />} />
+          </Routes>
+        </Flex>
+      </Router>
+    </MyState>
+               
     )
 }
 

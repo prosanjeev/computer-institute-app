@@ -1,4 +1,12 @@
-import { Box, Flex, HStack, Heading, Icon, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  HStack,
+  Heading,
+  Icon,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
 import { ChevronDownIcon, ChevronLeftIcon } from "@chakra-ui/icons";
@@ -33,33 +41,45 @@ const Sidenav = () => {
 
   return (
     <Stack
+      // pos={{ md: "fixed" }}
+      // top={{ md: 0 }}
       bg="#E3E7E9"
       // bg="#00073D"
-      justify="space-between" border='1px solid #d4cfcf' 
+      justify="space-between"
+      border="1px solid #d4cfcf"
       boxShadow={{
         base: "none",
         lg: "2xl",
+        zIndex: "10"
       }}
       w={{
         base: "full",
-        lg: "16rem", 
+        lg: "16rem",
       }}
-      h="100vh" 
+      h="100vh"
+      zIndex="docked"
     >
       <Box>
-       <Flex align='center' py={4} justify='center' borderTop='10px'   boxShadow={{
-        base: "none",
-        lg: "sm",
-      }}>
-       <Heading
-          // textAlign="center"
-          fontSize="30px" fontWeight='700'
-          // pt="3.5rem"
-          // color="orange"
+        <Flex
+          align="center"
+          py={4}
+          justify="center"
+          borderTop="10px"
+          boxShadow={{
+            base: "none",
+            lg: "sm",
+          }}
         >
-          Admin
-        </Heading>
-       </Flex>
+          <Heading
+            // textAlign="center"
+            fontSize="30px"
+            fontWeight="700"
+            // pt="3.5rem"
+            // color="orange"
+          >
+            Admin
+          </Heading>
+        </Flex>
         <Box mt="6" mx="3">
           {navLinks.map((nav, index) => (
             <Box key={nav.text}>
@@ -149,24 +169,25 @@ const Sidenav = () => {
       </Box>
 
       <Box mt="2" mx="3" mb="6" onClick={handleLogout}>
-       
-          <HStack
-            borderRadius="10px" justify='center' cursor='pointer' align='center'
-            py="3"
-            px="4"
-            bg={isActiveLink("/support") ? "#F3F3F7" : "transparent"}
-            color={isActiveLink("/support") ? "#171717" : "#797E82"}
-            _hover={{
-              bg: "#F3F3F7",
-              color: "#171717",
-            }}
-          >
-            <Text fontSize="20px" fontWeight="medium">
-              Logout
-            </Text>
-            <Icon as={AiOutlineLogout} />
-          </HStack>
-      
+        <HStack
+          borderRadius="10px"
+          justify="center"
+          cursor="pointer"
+          align="center"
+          py="3"
+          px="4"
+          bg={isActiveLink("/support") ? "#F3F3F7" : "transparent"}
+          color={isActiveLink("/support") ? "#171717" : "#797E82"}
+          _hover={{
+            bg: "#F3F3F7",
+            color: "#171717",
+          }}
+        >
+          <Text fontSize="20px" fontWeight="medium">
+            Logout
+          </Text>
+          <Icon as={AiOutlineLogout} />
+        </HStack>
       </Box>
     </Stack>
   );
