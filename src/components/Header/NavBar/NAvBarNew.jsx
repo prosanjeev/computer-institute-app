@@ -12,9 +12,10 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
-  IconButton,
+  HStack,
+  Image,
 } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { menuItems } from "./data/data";
 import { c_name } from "../../../info/Info";
 
@@ -39,7 +40,7 @@ function NAvBarNew() {
         w={{ base: "90%", md: "80%" }}
         h={{ base: "55px", md: "80%" }}
         justify={{ base: "end", md: "none" }}
-        boxShadow="1px 1px 10px 3px rgba(0, 0, 0, 0.1)"
+        // boxShadow="1px 1px 10px 3px rgba(0, 0, 0, 0.1)"
       >
         <Box
           as="ul"
@@ -69,12 +70,16 @@ function NAvBarNew() {
             </Box>
           ))}
         </Box>
-        <IconButton
-          icon={<HamburgerIcon />}
-          aria-label="Open Menu"
-          display={{ md: "none" }}
-          onClick={handleToggle}
-        />
+        <HStack  justify='space-between' align='center'>
+          <Image src="/mobilenav.png" w='70%' display={{ md: "none" }}/>
+          <Box onClick={handleToggle} display={{ md: "none" }}>
+            {isOpen ? (
+              <CloseIcon color="white" boxSize="20px" />
+            ) : (
+              <HamburgerIcon color="white" boxSize="30px" />
+            )}
+          </Box>
+        </HStack>
       </Flex>
       <Drawer isOpen={isOpen} placement="left" onClose={handleToggle}>
         <DrawerOverlay />
@@ -84,18 +89,18 @@ function NAvBarNew() {
           <DrawerBody>
             {menuItems.map((list) => (
               <React.Fragment key={list.label}>
-               <Link to={list.link}>
-               <Button
-                  colorScheme="teal"
-                  mb={3}
-                  w="100%"
-                  key={list.label}
-                  onClick={() => handleSubMenuToggle(list.label)}
-                >
-                  {list.label}
-                  {list.subMenu && <IoIosArrowDown />}
-                </Button>
-               </Link>
+                <Link to={list.link}>
+                  <Button
+                    colorScheme="teal"
+                    mb={3}
+                    w="100%"
+                    key={list.label}
+                    onClick={() => handleSubMenuToggle(list.label)}
+                  >
+                    {list.label}
+                    {list.subMenu && <IoIosArrowDown />}
+                  </Button>
+                </Link>
                 {list.subMenu && openSubMenu === list.label && (
                   <Box ml={4}>
                     {list.subMenu.map((subMenuItem) => (

@@ -52,8 +52,8 @@ function TopHeader() {
                   // colorScheme='teal'
                   variant="outline"
                   size="sm"
-                  _hover={{ boxShadow: "xl"}}
-                  color="black"
+                  _hover={{ boxShadow: "2xl" }}
+                color='black'
                   boxShadow="md"
                   transition="all 0.2s"
                   px={2}
@@ -69,6 +69,7 @@ function TopHeader() {
             flexWrap="wrap"
             my={{ base: "8px", md: "none" }}
             align="center"
+            color=' #034C7F'
           >
             <Flex align="center" gap={1}>
               <IoIosCall />
@@ -79,6 +80,7 @@ function TopHeader() {
                 <Divider orientation="vertical" />
                 <Box boxShadow="xl">
                   <Icon
+                  
                     as={icon.name}
                     ml={3}
                     _hover={{ boxShadow: "2xl", cursor: "pointer" }}
@@ -90,7 +92,7 @@ function TopHeader() {
         </Flex>
       </Box>
 
-      <Image src="/topimg.png" mb={{ base: "3" }} />
+      <Image src="/topimg.png" mb={{ base: "3" }} display={{ base: "none" }} />
     </Stack>
   );
 }
