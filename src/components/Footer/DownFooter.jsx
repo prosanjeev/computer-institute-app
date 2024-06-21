@@ -22,7 +22,7 @@ const DownFooter = () => {
   const useFulLink = [
     { text: "Home", link: "/" },
     { text: "About Us", link: "/about-company" },
-    { text: "Contact Us", link: "/contact-us" },
+    { text: "Contact Us", link: "/contact" },
     { text: "Student Login", link: "/student-login" },
     { text: "Student Verification", link: "/student-verification" },
     { text: "Certificate Verification", link: "/certificate-verification" },
