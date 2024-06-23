@@ -105,6 +105,7 @@ const BranchWallet = () => {
                 <Td>₹{request.requestAmount}</Td>
                 <Td>
                   <Button
+                  colorScheme="green"
                     onClick={() =>
                       handleApprove(request.id, request.requestAmount)
                     }

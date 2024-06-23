@@ -92,6 +92,9 @@ export const studentSlice = createSlice({
       state.userId = null;
       state.studentData = null; // Clear student data on logout
     },
+    setLoggedIn: (state, action) => {
+      state.isLoggedIn = action.payload;
+    },
     setStudentData: (state, action) => {
       state.studentData = action.payload;
     },

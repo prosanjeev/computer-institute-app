@@ -92,7 +92,7 @@ function TopHeader() {
         </Flex>
       </Box>
 
-      <Image src="/topimg.png" mb={{ base: "3" }} display={{ base: "none" }} />
+      <Image src="/topimg.png" mb={{ base: "3" }} display={{ base: "none", md:"block" }} />
     </Stack>
   );
 }

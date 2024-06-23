@@ -61,16 +61,61 @@ import DiplomaCourses from "./Pages/Courses/DiplomaCourses";
 // import LanguageCourses from "./Pages/courses/LanguageCourses";
 import ProfessionalCourses from "./Pages/Courses/ProfessionalCourses";
 import { Flex } from "@chakra-ui/react";
+import FetchCourses from "./Demo";
+import StudentPrivateRoute from "./AFS Panel/components/privateRoute/StudentPrivateRoute";
 // import StudentListPage from "./AFS Panel/FranchisePanel/pages/Student/AllStudents";
 
 const App = () => {
 
-    return (
-       
-        <MyState>
+  return (
+
+    <MyState>
       <Router>
         <Flex direction="column" maxH='100vh' maxW='100vw'>
           <Routes>
+
+{/* Admin */}
+            <Route path="admin-login" element={<AdminLogin />} />
+            <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route element={<AdminPrivateRoute />}>
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="student" element={<AllStudent />} />
+              <Route path="add-branch" element={<AddBranch />} />
+              <Route path="branch" element={<AllBranch />} />
+              <Route path="update-branch" element={<UpdateBranch />} />
+              <Route path="course-category" element={<CourseCategoryPage />} />
+              <Route path="contact-us-query" element={<ContactUsQuery />} />
+              <Route path="branch-wallet" element={<BranchWallet />} />
+              <Route path="add-course" element={<AddCourse />} />
+              <Route path="all-courses" element={<AllCourses />} />
+              <Route path="update-course" element={<UpdateCourse />} />
+              <Route path="user-notice" element={<NotificationForUser />} />
+            </Route>
+
+{/* Franchise */}
+            <Route path="franchise-login" element={<FranchiseLogin />} />
+            <Route element={<FranchisePrivateRoute />}>
+              <Route path="franchise-dashboard" element={<FranchiseDashboard />} />
+              <Route path="wallet-recharge" element={<WalletRechargeRequestForm />} />
+              <Route path="franchise-profile" element={<FranchiseProfilePage />} />
+              <Route path="authorisation-certificate" element={<PrintCenterCertificate />} />
+              <Route path="add-student" element={<AddStudentPage />} />
+              <Route path="update-student" element={<UpdateStudentPage />} />
+              <Route path="students-list" element={<StudentListPage />} />
+              <Route path="course-selection" element={<CourseSelectionPage />} />
+              <Route path="student-certificate" element={<PrintStudentCertificate />} />
+              <Route path="student-marksheet" element={<PrintMarksheet />} />
+              <Route path="idcard" element={<PrintIdCard />} />
+            </Route>
+
+{/* Student */}
+            <Route element={<StudentPrivateRoute />}>
+              <Route path="student-dashboard" element={<StudentDashboard />} />
+              <Route path="id-card" element={<StudentIDCard />} />
+              <Route path="practice-test" element={<PracticeTest />} />
+            </Route>
+
+{/* Frontend */}
             <Route path="/" element={<MainLayout />}>
               <Route path="" element={<Home />} />
               <Route path="about-company" element={<AboutCompany />} />
@@ -94,51 +139,17 @@ const App = () => {
               <Route path="our-team" element={<OurTeam />} />
             </Route>
 
-            <Route path="admin-login" element={<AdminLogin />} />
-            <Route element={<AdminPrivateRoute />}>
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="student" element={<AllStudent />} />
-              <Route path="add-branch" element={<AddBranch />} />
-              <Route path="branch" element={<AllBranch />} />
-              <Route path="update-branch" element={<UpdateBranch />} />
-              <Route path="course-category" element={<CourseCategoryPage />} />
-              <Route path="contact-us-query" element={<ContactUsQuery />} />
-              <Route path="branch-wallet" element={<BranchWallet />} />
-              <Route path="add-course" element={<AddCourse />} />
-              <Route path="all-courses" element={<AllCourses />} />
-              <Route path="update-course" element={<UpdateCourse />} />
-            </Route>
-
-            <Route path="franchise-login" element={<FranchiseLogin />} />
-            <Route element={<FranchisePrivateRoute />}>
-              <Route path="franchise-dashboard" element={<FranchiseDashboard />} />
-              <Route path="wallet-recharge" element={<WalletRechargeRequestForm />} />
-              <Route path="franchise-profile" element={<FranchiseProfilePage />} />
-              <Route path="authorisation-certificate" element={<PrintCenterCertificate />} />
-              <Route path="add-student" element={<AddStudentPage />} />
-              <Route path="update-student" element={<UpdateStudentPage />} />
-              <Route path="students-list" element={<StudentListPage />} />
-              <Route path="course-selection" element={<CourseSelectionPage />} />
-              <Route path="student-certificate" element={<PrintStudentCertificate />} />
-              <Route path="student-marksheet" element={<PrintMarksheet />} />
-            </Route>
-
-            <Route path="student-dashboard" element={<StudentDashboard />} />
-            <Route path="practice-test" element={<PracticeTest />} />
-
+{/* General */}
             <Route path="*" element={<>Not Found</>} />
             <Route path="branchpage" element={<BranchPage />} />
-            <Route path="forgot-password" element={<ForgotPassword />} />
-            <Route path="id-card" element={<StudentIDCard />} />
-            <Route path="idcard" element={<PrintIdCard />} />
             <Route path="qr-verification/:regNumber" element={<QrVerification />} />
-            <Route path="user-notice" element={<NotificationForUser />} />
+            <Route path="demo" element={<FetchCourses />} />
           </Routes>
         </Flex>
       </Router>
     </MyState>
-               
-    )
+
+  )
 }
 
 export default App
