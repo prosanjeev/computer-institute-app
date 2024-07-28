@@ -16,13 +16,14 @@ const StudentSidenav = () => {
       justify="space-between"
       boxShadow={{
         base: "none",
-        lg: "lg",
+        lg: "2xl",
       }}
       w={{
         base: "full",
-        lg: "16rem",
+        lg: "15rem",
       }}
-      h="100vh"
+      h="full"
+      borderRadius={{md:"20"}}
     >
       <Box>
         <Heading textAlign="center" fontSize="20px" as="h1" pt="3.5rem">
@@ -35,7 +36,7 @@ const StudentSidenav = () => {
                 bg={isActiveLink(nav.link) ? "#F3F3F7" : "transparent"}
                 color={isActiveLink(nav.link) ? "#1A202C" : "#797E82"}
                 borderRadius="10px"
-                py="3"
+                py="4"
                 px="4"
                 _hover={{
                   bg: "#F3F3F7",
@@ -43,7 +44,7 @@ const StudentSidenav = () => {
                 }}
                 // color="#797E82"
               >
-                <Icon boxSize={4} as={nav.icon} />
+                <Icon boxSize={5} as={nav.icon} />
                 <Text fontSize="16px" fontWeight="500">
                   {nav.text}
                 </Text>

@@ -37,8 +37,8 @@ const VerifivaticationForm = ({ title, label, onSubmitCallback }) => {
             initialValues={{
               user: "",
             }}
-            onSubmit={(values) => {
-              onSubmitCallback(values); // Pass form values to the parent component
+            onSubmit={(values, { resetForm }) => {
+              onSubmitCallback(values, resetForm); // Pass form values and resetForm to the parent component
             }}
             validationSchema={InputValidationSchema}
           >

@@ -253,14 +253,14 @@ const MarksheetContent = ({ studentData }) => {
               </Badge>
               <Badge colorScheme="green" p={2} mx={2}>
                 GRADE C
-              </Badge>
+              </Badge> 
               <Badge colorScheme="red" p={2} mx={2}>
                 GRADE D
               </Badge>
             </Flex> */}
 
           </Box>
-            <Flex justify="center" position='absolute' right='90px' bottom='90px'>
+            {/* <Flex justify="center" position='absolute' right='90px' bottom='90px'>
               <Image
                 src='/signature.png'
                 alt="Company Logo"
@@ -268,7 +268,7 @@ const MarksheetContent = ({ studentData }) => {
                 width="140px"
                 mb={-4}
               />
-            </Flex>
+            </Flex> */}
         </Box>
       </Box>
     </Flex>

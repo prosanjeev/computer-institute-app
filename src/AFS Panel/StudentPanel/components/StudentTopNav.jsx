@@ -3,13 +3,16 @@ import {
   HStack,
   Heading,
   Icon,
+  Image,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import { FaBars, FaUserTie } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+
+const userProfileImageUrl = "https://lh3.googleusercontent.com/ogw/AF2bZygCutAvX0GuUOhvFprLOZAOPb-K9zuVaJ6eVnXB9wcRtA=s32-c-mo"; // Placeholder image URL
 
 const StudentTopNav = ({ title, onOpen }) => {
   const navigate = useNavigate();
@@ -46,14 +49,24 @@ const StudentTopNav = ({ title, onOpen }) => {
         </Heading>
 
         <Menu>
-          <MenuButton>
+          {/* <MenuButton>
             <Icon
               as={FaUserTie}
               fontSize="32px"
               mt={{ base: "1", md: "2" }}
               color={{ base: "white", md: "black" }}
             />
+          </MenuButton> */}
+          <MenuButton>
+            <Image
+              src={userProfileImageUrl} // Replace this with the URL of the user's profile image
+              borderRadius="full"
+              boxSize={{ base: "38px", md: "50px" }} // Adjust the size as needed
+              mt={{ base: "1", md: "2" }}
+              alt="User Profile"
+            />
           </MenuButton>
+
           <MenuList border="1px solid #d4cfcf">
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
             <MenuItem>Support</MenuItem>

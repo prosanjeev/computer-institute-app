@@ -2,11 +2,13 @@ import { Box, Grid, GridItem, SimpleGrid, Stack } from "@chakra-ui/react";
 import DashboardLayout from "../../components/StudentDashboardLayout";
 import { stDashboardData } from "./components/stDashboardData";
 import StDashboardCard from "./components/StDashboardCard";
+import WelcomeCard from "./components/WelcomeCard";
 
 const StudentDashboard = () => {
   return (
     <DashboardLayout title="Dashboard">
       <Stack w="90%" mx="auto">
+        <WelcomeCard/>
         <Box w="100%" mt={5}>
           <Grid
             gridTemplateColumns={{

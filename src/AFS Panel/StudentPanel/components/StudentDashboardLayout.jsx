@@ -7,20 +7,24 @@ const StudentDashboardLayout = ({ title, children }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   return (
-    <Flex bg="#F0F3F5">
+    <Flex bg="#F0F3F5"   w="100vw"
+    h="100vh"
+    pos="fixed">
       <Box
         display={{
-          base: "none", 
+          base: "none",
           lg: "flex",
         }}
       >
-       <StudentSidenav/>
+        <Box pl={8} py={8}>
+          <StudentSidenav />
+        </Box>
       </Box>
-      
+
       <StudentSideDrawer isOpen={isOpen} onClose={onClose} />
       <Box flexGrow={1}>
-        <StudentTopNav title={title} onOpen={onOpen}/>
-       
+        <StudentTopNav title={title} onOpen={onOpen} />
+
         <Container
           overflowX="hidden"
           overflowY="auto"

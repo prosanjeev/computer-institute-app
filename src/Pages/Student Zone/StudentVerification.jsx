@@ -19,11 +19,12 @@ const StudentVerification = () => {
   const userId = useSelector(selectUserIdStudent);
   console.log("studentId:", userId);
 
-  const handleSubmit = (formData) => {
+  const handleSubmit = (formData, resetForm) => {
     const regNumber = formData.user;
     if (regNumber) {
       dispatch(clearStudentData()); // Clear previous data
       dispatch(fetchStudentData(regNumber)); // Fetch new data
+      resetForm(); // Clear the input field
     } else {
       console.log("Invalid registration number");
     }

@@ -17,7 +17,7 @@ const StDashboardCard = ({  name, icon }) => {
       transition="all 0.2s"
     >
       <Stack justify="space-between" align='center' gap={8} py={4}>
-        <Icon pt={1}  color="" boxSize="80px" as={icon} />
+        <Icon pt={1}  color="#38719A" boxSize="80px" as={icon} />
         <Stack px="4">
           {/* <Text
           mt="1"
